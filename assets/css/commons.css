@@ -1,0 +1,114 @@
+
+:root {
+    /* 공통 색상 */
+    --color-bg: #000000;
+    --color-white: #FFFFFF;
+    --color-text-muted: #A8A8A8;
+    --color-text-soft: #CECECE;
+    --color-text-light: #F5F5F5;
+    --color-border: #A8A8A8;
+
+    /* 기존 컨테이너 최대 크기 참고값 (각 섹션은 기존 설정 유지) */
+    --container-max: 1680px;
+
+    /* 향후 섹션 간격 공통화에 쓸 값. 기존 margin-top 설정은 유지합니다. */
+    --section-gap: 100px;
+}
+
+@media (max-width: 1024px) {
+    :root { --section-gap: 80px; }
+}
+
+@media (max-width: 768px) {
+    :root { --section-gap: 60px; }
+}
+
+@media (max-width: 480px) {
+    :root { --section-gap: 40px; }
+}
+
+/* =========================================================
+   기존 style.css에서 옮긴 프리텐다드 폰트 9종 및 공통 클래스
+   ========================================================= */
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-display: swap;
+}
+
+/* 프리텐다드 폰트 */
+
+body{
+    font-family: 'pretendard';
+    margin: 0;
+    background: #000;
+}
+
+.container{
+    width: 1680px;
+    margin: auto;
+}
+
+.subtitle{
+    font-size: 56px;
+    font-weight: 500;
+}
+

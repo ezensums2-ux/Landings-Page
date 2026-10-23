@@ -1,0 +1,2819 @@
+@import url('reset.css');
+@import url('normailze.css');
+@import url('commons.css');
+
+/* SECTION 01 ~ FOOTER: 기존 섹션별 스타일과 반응형 값 유지 */
+.header{
+    height: 100px;
+    background: #000;
+    padding: 0;
+}
+
+.header-inner{
+    display: flex;
+    align-items: center;
+    width: calc(100% - 40px);
+    max-width: 1680px;
+    height: 100%;
+    margin: 0 auto;
+}
+.s-logo-img button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.s-logo-img svg {
+    display: block;
+}
+
+.header-buttons{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+}
+    
+.ss-but{
+    background: linear-gradient(90deg,rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px;
+    text-align: left;
+}
+
+.icon-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.icon-button img{
+    display: block;
+   
+}
+
+@media(max-width:768px){
+    .header{
+        height: 72px;
+    }
+    .s-logo-img svg{
+        width: 90px;
+    }
+    .header-buttons{
+        gap: 8px;
+    }
+    .button1{
+        width: auto;
+        padding: 8px 12px;
+    }
+}
+
+
+/* section01 시작 */
+
+.hero-bg{
+    background: url('../images/hero-bg.jpg') center / cover no-repeat ;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.black-bg{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+/* 히어로 전체를 덮는 검정 배경 */
+.hero-bg .black-bg{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0,0,0,0.5);
+}
+.hero-title{
+    color: #fff;
+}
+.kv-title{
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+}
+/* 제목과 스크롤 안내를 담는 영역 */
+.hero-bg .kv-title{
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;  /* svh 미지원 브라우저용 */
+    min-height: 100svh; /* 모바일 주소창이 보일 때의 화면 높이 기준 */
+
+    margin: 0 auto;
+    padding: 80px 24px 24px;
+}
+.d-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero-bg .d-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.hero-bg .logo-img{
+    width: 100%;
+    max-width: 600px;
+}
+.hero-bg .logo-img svg{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.hero-bg .hero-title{
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+.herp-bg .subtitle{
+    margin: 0;
+    font-size: clamp(18px, 3vw, 40px);
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+
+.scroll-text{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+
+}
+
+.scroll-text p{
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+}
+.hero-bg .scroll-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hero-bg .scroll-text p{
+    margin: 0;
+    font-size: clamp(12px, 1.5vw, 20px);
+    font-weight: 400;
+    color: #fff;
+}
+.hero-bg .scroll-text svg{
+    display: block;
+    width: 24px;
+    height: auto;
+    flex-shrink: 0;
+}
+/* 모바일 */
+@media (max-width: 768px) {
+    .hero-bg .kv-title{
+        padding: 48px 20px 20px;
+    }
+    .hero-bg .d-flex{
+        gap: 16px;
+    }
+    .hero-bg .logo-img {
+        max-width: 320px;
+    }
+    .hero-bg .scroll-text svg{
+        width: 20px;
+    }
+}
+
+
+
+/* section01 끝 */
+
+
+/* section02 시작 */
+
+/* 섹션 전체 배경 */
+.season{
+    position: relative;
+    isolation: isolate;
+    padding: 100px 0;
+    margin-top: 100px;
+    color: #fff;
+    background: #111 url('../images/spring-bg.jpg') center / cover no-repeat;
+}
+/* 배경을 어둡게 처리 */
+.season::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg,rgba(4, 4, 7, 1) 0%, rgba(4, 4, 7, 0) 50%, rgba(4, 4, 7, 0.7) 100%),
+    linear-gradient(90deg,rgba(4, 4, 7, 0.95) 0%, rgba(4, 4, 7, 0.6) 50%, rgba(4, 4, 7, 0) 100%);
+}
+/* 섹션 내부 기본 설정 */
+.season,
+.season * {
+    box-sizing: border-box;
+}
+.season h2,
+.season h3,
+.season p,
+.season dl,
+.season dd {
+  margin: 0;
+}
+
+/* 왼쪽 소개 + 오른쪽 카드 */
+.season .season-inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(32px, 5vw, 100px);
+
+  width: calc(100% - 48px);
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+/* 왼쪽 소개 영역 */
+.season .season-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  min-width: 0;
+}
+
+/* 상단 시즌 배지 */
+.season .season-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border: 1px solid rgba(244, 114, 182, 0.30);
+  border-radius: 999px;
+  background: rgba(236, 72, 153, 0.20);
+  color: #F9A8D4;
+  font-size: 14px;
+}
+
+/* 배지 앞 작은 원 */
+.season .season-badge::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 100%;
+  background: #F472B6;
+}
+
+.season .season-label {
+  margin-top: 20px;
+  color: #F472B6;
+  font-size: 16px;
+}
+
+/* 메인 제목 */
+.season .season-title {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: 600;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 영문 제목은 다음 줄에 배치 */
+.season .season-title span {
+  display: inline-block;
+  background: linear-gradient(90deg,rgba(249, 168, 212, 1) 0%, rgba(233, 213, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.season .season-subtitle {
+  margin-top: 22px;
+  font-size: 20px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.season .season-description {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.season .season-description p + p {
+  margin-top: 20px;
+}
+
+/* 운영 정보 + 예매 버튼 */
+.season .season-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.season .season-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.season .season-detail {
+  padding: 20px 30px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(0, 0, 0, 0.20);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.season .season-detail dt {
+  color: #fff;
+  font-size: 16px;
+}
+
+.season .season-detail dd {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.season .season-detail:first-child dd {
+  color: #E977B3;
+}
+
+/* 예매 링크 */
+.season .season-booking {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background: linear-gradient(90deg,rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+
+.season .season-booking:hover {
+  filter: brightness(1.12);
+}
+
+.season .season-booking:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* 오른쪽 반투명 카드 */
+.season .experience-card {
+  min-width: 0;
+  padding: 40px 30px;
+  border-radius: 20px;
+  background: rgba(217, 217, 217, 0.20);
+}
+
+/* 카드 이미지 */
+.season .experience-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.season .experience-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.9 / 1;
+  object-fit: cover;
+}
+
+/* 사진 우측 상단 라벨 */
+.season .experience-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  max-width: calc(100% - 24px);
+  padding: 5px 10px;
+  border-radius: 999px;
+  background:rgba(0, 0, 0, 0.30);
+  color: #F9A8D4;
+  font-size: 13px;
+}
+
+/* 카드 제목과 설명 */
+.season .experience-content {
+  padding: 28px 0 20px;
+}
+
+.season .experience-title {
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 3;
+}
+
+.season .experience-description {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 16px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+/* 카드 하단 */
+.season .experience-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color:rgba(255, 255, 255, 0.50);
+  font-size: 14px;
+}
+
+.season .experience-footer p:last-child {
+  color: #ff79bc;
+}
+
+/* 태블릿: 위아래 배치 */
+@media (max-width: 1024px) {
+  .season {
+    padding: 72px 0;
+  }
+
+  .season .season-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .season .season-info {
+    gap: 32px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 600px) {
+  .season {
+    padding: 48px 0;
+  }
+
+  .season .season-inner {
+    width: calc(100% - 40px);
+    gap: 32px;
+  }
+
+  .season .season-title {
+    font-size: 26px;
+  }
+
+  .season .season-description {
+    font-size: 13px;
+  }
+
+  .season .season-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .season .season-details {
+    gap: 12px;
+  }
+
+  .season .season-detail {
+    flex: 1 1 140px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .season .season-detail dd {
+    font-size: 14px;
+  }
+
+  .season .season-booking {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .season .experience-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .season .experience-content {
+    padding-top: 20px;
+  }
+
+  .season .experience-description {
+    font-size: 13px;
+  }
+}
+
+
+/* ==========================================
+   SECTION 02 : FULL SCREEN SLIDER
+========================================== */
+
+/* 기존 섹션 하단 여백 제거 */
+.season {
+    padding-bottom: 0;
+}
+
+/* 슬라이드 전체 영역 */
+.season-gallery {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+    margin-top: 60px;
+    background-color: #000000;
+}
+
+/* 스크롤할 때 화면에 고정되는 영역 */
+.season-gallery-sticky {
+    position: sticky;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+    background-color: #000000;
+}
+
+/* 개별 이미지 슬라이드 */
+.season-gallery-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform: translateY(100%);
+}
+
+/* 첫 번째 이미지 */
+.season-gallery-slide:nth-child(1) {
+    z-index: 1;
+    transform: translateY(0);
+}
+
+/* 두 번째 이미지 */
+.season-gallery-slide:nth-child(2) {
+    z-index: 2;
+}
+
+/* 세 번째 이미지 */
+.season-gallery-slide:nth-child(3) {
+    z-index: 3;
+}
+
+/* 이미지 공통 설정 */
+.season .season-gallery-slide img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ==========================================
+   TABLET : 1024px 이하
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .season-gallery {
+        margin-top: 50px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE : 768px 이하
+========================================== */
+
+@media (max-width: 768px) {
+
+    .season-gallery {
+        margin-top: 40px;
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE : 480px 이하
+========================================== */
+
+@media (max-width: 480px) {
+
+    .season-gallery {
+        margin-top: 30px;
+    }
+
+}
+
+/* ==========================================
+   움직임 감소 설정
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .season-gallery {
+        height: auto;
+    }
+
+    .season-gallery-sticky {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    .season-gallery-slide {
+        position: relative;
+        height: 100vh;
+        transform: none !important;
+    }
+
+}
+/* PC */
+.season .season-gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+
+    .season .season-gallery-slide img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+
+    .season .season-gallery-slide img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+
+    .season .season-gallery-slide img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+}
+
+
+
+/* section02 끝 */
+
+/* section03 시작 */
+
+.about-section {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    min-height: 830px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/about-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.about-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.60));
+}
+.about-inner {
+    position: relative;
+    z-index: 2;
+    width: min(1188px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 90px 0 100px;
+    text-align: center;
+    color: #ffffff;
+}
+.about-symbol {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-label {
+    margin: 0 0 30px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #A8A8A8;
+}
+.about-title {
+    margin: 0 0 10px 0;
+    font-size: clamp(32px, 2.6vw, 40px);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+    color: #CECECE;
+}
+.about-description {
+    max-width: 760px;
+    margin: 30px auto 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #F5F5F5;
+}
+.about-description p {
+    margin: 0 0 10px 0;
+}
+
+.about-description p + p {
+    margin-top: 30px;
+}
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 75px;
+    max-width: 1180px;
+    margin: 30px auto 0;
+}
+.about-card {
+    min-height: 150px;
+    padding: 10px;
+    text-align: left;
+    background: #000;
+    border: 1px solid #A8A8A8;
+    border-radius: 10px;
+}
+.about-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(10, 10, 15, 0.55);
+
+    border-color: rgba(255, 255, 255, 0.75);
+}
+.card-number {
+    display: block;
+    font-size: 28px;
+    font-weight: 500;
+    color: #A8A8A8;
+    margin: 0 0 10px;
+
+}
+.card-title {
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+.card-text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #CECECE;
+}
+/* =========================================
+   Tablet
+   1024px 이하
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .about-section {
+        min-height: auto;
+        margin-top: 80px;
+    }
+
+    .about-inner {
+        width: calc(100% - 64px);
+
+        padding: 100px 0;
+    }
+
+    .about-title {
+        font-size: 34px;
+    }
+
+    .about-description {
+        max-width: 680px;
+
+        font-size: 13px;
+    }
+
+    .about-cards {
+        gap: 20px;
+
+        margin-top: 50px;
+    }
+
+    .about-card {
+        padding: 20px;
+    }
+}
+
+
+/* =========================================
+   Tablet / Mobile
+   768px 이하
+========================================= */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        background-position: center;
+        margin-top: 60px;
+    }
+
+    .about-inner {
+        width: calc(100% - 40px);
+
+        padding: 80px 0;
+    }
+
+    .about-symbol {
+        margin-bottom: 15px;
+    }
+
+    .about-label {
+        margin-bottom: 24px;
+
+        font-size: 12px;
+    }
+
+    .about-title {
+        font-size: 28px;
+
+        line-height: 1.45;
+    }
+
+    .about-description {
+        max-width: 560px;
+
+        margin-top: 30px;
+
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    /*
+        태블릿부터 카드 1열
+    */
+
+    .about-cards {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+
+        gap: 16px;
+
+        margin-top: 40px;
+    }
+
+    .about-card {
+        min-height: auto;
+
+        padding: 22px;
+    }
+}
+
+
+/* =========================================
+   Mobile
+   480px 이하
+========================================= */
+
+@media (max-width: 480px) {
+    .about-section {
+        margin-top: 40px;
+    }
+
+    .about-inner {
+        width: calc(100% - 32px);
+
+        padding: 65px 0;
+    }
+
+    .about-symbol {
+        width: 32px;
+        height: 32px;
+
+        font-size: 20px;
+    }
+
+    .about-label {
+        margin-bottom: 20px;
+
+        font-size: 11px;
+    }
+
+    .about-title {
+        font-size: 24px;
+        line-height: 1.45;
+
+        letter-spacing: -0.04em;
+    }
+
+    /*
+        모바일에서는 br 때문에
+        너무 강제로 줄이 나뉘는 것을 방지
+    */
+
+    .about-title br {
+        display: none;
+    }
+
+    .about-description {
+        margin-top: 28px;
+
+        font-size: 12px;
+
+        text-align: left;
+    }
+
+    .about-description p + p {
+        margin-top: 20px;
+    }
+
+    .about-cards {
+        margin-top: 35px;
+    }
+
+    .about-card {
+        padding: 20px 18px;
+
+        border-radius: 6px;
+    }
+
+    .card-number {
+        margin-bottom: 12px;
+
+        font-size: 20px;
+    }
+
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-text {
+        font-size: 11px;
+    }
+}
+/* section03 끝 */
+
+/* section04 시작 */
+
+.worlds-section{
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+  min-height: 830px;
+  background: #000;
+  overflow: hidden;
+}
+.worlds-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../images/worlds-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+}
+.worlds-inner {
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 160px);
+    max-width: 1712px;
+    min-height: 830px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+.worlds-content {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 520px;
+}
+.worlds-label-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+}
+.worlds-label {
+    flex-shrink: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1;
+    color: #CECECE;
+}
+.worlds-label-line {
+    display: block;
+    width: 250px;
+    height: 1px;
+    background: #CECECE;
+}
+.worlds-title {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+.worlds-subtitle {
+    margin: 62px 0 20px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+.worlds-content-line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #CECECE;
+}
+.worlds-description {
+    position: absolute;
+    left: 63%;
+    bottom: 60px;
+    transform: translateX(-50%);
+    width: max-content;
+    margin: 0;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+}
+.worlds-description strong {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+/* ==================================================
+   TABLET
+   1024px 이하
+================================================== */
+
+@media (max-width: 1024px) {
+
+    .worlds-section {
+        margin-top: 80px;
+
+        min-height: 720px;
+    }
+
+
+    .worlds-inner {
+        width: calc(100% - 80px);
+        min-height: 720px;
+    }
+
+
+    .worlds-content {
+        top: 80px;
+
+        width: 460px;
+    }
+
+
+    .worlds-title {
+        font-size: 42px;
+    }
+
+
+    .worlds-subtitle {
+        margin-top: 50px;
+
+        font-size: 20px;
+    }
+
+
+    .worlds-label {
+        font-size: 14px;
+    }
+
+
+    .worlds-label-line {
+        width: 180px;
+    }
+
+
+    .worlds-description {
+        bottom: 55px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* ==================================================
+   TABLET / MOBILE
+   768px 이하
+================================================== */
+
+@media (max-width: 768px) {
+
+    .worlds-section {
+        margin-top: 60px;
+
+        min-height: 680px;
+
+        /*
+            모바일에서는 인물/중요한 이미지가
+            잘리지 않도록 필요에 따라 조정
+        */
+        background-position: 55% center;
+    }
+
+
+    .worlds-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.58) 0%,
+                rgba(0, 0, 0, 0.25) 55%,
+                rgba(0, 0, 0, 0.58) 100%
+            );
+    }
+
+
+    .worlds-inner {
+        width: calc(100% - 48px);
+        min-height: 680px;
+    }
+
+
+    .worlds-content {
+        top: 65px;
+
+        width: 100%;
+        max-width: 420px;
+    }
+
+
+    .worlds-label-wrap {
+        margin-bottom: 22px;
+    }
+
+
+    .worlds-label {
+        font-size: 12px;
+    }
+
+
+    .worlds-label-line {
+        width: 130px;
+    }
+
+
+    .worlds-title {
+        font-size: 36px;
+    }
+
+
+    .worlds-subtitle {
+        margin-top: 42px;
+
+        font-size: 18px;
+    }
+
+
+    .worlds-content-line {
+        width: 90%;
+    }
+
+
+    .worlds-description {
+        left: 0;
+        bottom: 45px;
+
+        transform: none;
+
+        width: 100%;
+
+        font-size: 13px;
+
+        text-align: left;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+   480px 이하
+================================================== */
+
+@media (max-width: 480px) {
+
+    .worlds-section {
+        margin-top: 50px;
+
+        min-height: 620px;
+
+        background-position: 58% center;
+    }
+
+
+    .worlds-inner {
+        width: calc(100% - 32px);
+        min-height: 620px;
+    }
+
+
+    .worlds-content {
+        top: 50px;
+    }
+
+
+    .worlds-label-wrap {
+        gap: 10px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .worlds-label {
+        font-size: 11px;
+    }
+
+
+    .worlds-label-line {
+        flex: 1;
+
+        max-width: 110px;
+    }
+
+
+    .worlds-title {
+        font-size: 31px;
+        line-height: 1.15;
+    }
+
+
+    .worlds-subtitle {
+        margin-top: 35px;
+
+        font-size: 17px;
+    }
+
+
+    .worlds-content-line {
+        width: 100%;
+    }
+
+
+    .worlds-description {
+        bottom: 35px;
+
+        font-size: 12px;
+        line-height: 1.55;
+    }
+
+
+    .worlds-description br {
+        display: none;
+    }
+}
+/* section 04 끝 */
+
+/* section 05 시작 */
+
+
+.immersive-section {
+    position: relative;
+    width: 100%;
+    min-height: 830px;
+    margin-top: 100px;
+    background-color: #000;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.immersive-inner {
+    position: relative;
+    width: calc(100% - 80px);
+    max-width: 1680px;
+    min-height: 830px;
+    margin: 0 auto;
+    padding: 100px 0 34px;
+    box-sizing: border-box;
+    color: #fff;
+}
+.immersive-content {
+    width: 100%;
+    max-width: 550px;
+}
+.immersive-label-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.immersive-label {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: nowrap;
+    color: #CECECE;
+}
+.immersive-label-line {
+    display: block;
+    width: 250px;
+    height: 1px;
+    background: #CECECE;
+}
+.immersive-title {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+.immersive-subtitle {
+    margin: 60px 0 20px;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    color: #fff;
+}
+.immersive-content-line {
+    display: block;
+    width: 480px;
+    max-width: 100%;
+    height: 1px;
+    background: #CECECE;
+}
+.immersive-scroll {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: #CECECE;
+}
+.immersive-scroll span {
+    font-size: 20px;
+    line-height: 1;
+    color: #CECECE;
+}
+
+
+/* =========================================
+   TABLET : 1024px 이하
+========================================= */
+
+@media (max-width: 1024px) {
+
+    .immersive-section {
+        margin-top: 80px;
+        min-height: 720px;
+    }
+
+    .immersive-inner {
+        width: calc(100% - 64px);
+        min-height: 720px;
+        padding-top: 80px;
+    }
+
+    .immersive-content {
+        max-width: 500px;
+    }
+
+    .immersive-title {
+        font-size: 44px;
+    }
+
+    .immersive-subtitle {
+        margin-top: 50px;
+        font-size: 21px;
+    }
+
+    .immersive-label {
+        font-size: 14px;
+    }
+
+    .immersive-label-line {
+        width: 200px;
+    }
+
+    .immersive-content-line {
+        width: 420px;
+    }
+
+    .immersive-scroll {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   TABLET / MOBILE : 768px 이하
+========================================= */
+
+@media (max-width: 768px) {
+
+    .immersive-section {
+        margin-top: 60px;
+        min-height: 650px;
+    }
+
+    .immersive-inner {
+        width: calc(100% - 48px);
+        min-height: 650px;
+        padding-top: 70px;
+    }
+
+    .immersive-content {
+        max-width: 100%;
+    }
+
+    .immersive-label-wrap {
+        margin-bottom: 26px;
+    }
+
+    .immersive-label {
+        font-size: 12px;
+    }
+
+    .immersive-label-line {
+        width: 160px;
+    }
+
+    .immersive-title {
+        font-size: 38px;
+    }
+
+    .immersive-subtitle {
+        margin-top: 45px;
+        font-size: 19px;
+    }
+
+    .immersive-content-line {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .immersive-scroll {
+        bottom: 30px;
+        font-size: 12px;
+    }
+
+    .immersive-scroll span {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================
+   MOBILE : 480px 이하
+========================================= */
+
+@media (max-width: 480px) {
+
+    .immersive-section {
+        margin-top: 40px;
+        min-height: 560px;
+    }
+
+    .immersive-inner {
+        width: calc(100% - 32px);
+        min-height: 560px;
+        padding-top: 55px;
+    }
+
+    .immersive-label-wrap {
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .immersive-label {
+        font-size: 11px;
+    }
+
+    .immersive-label-line {
+        width: 100px;
+    }
+
+    .immersive-title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .immersive-subtitle {
+        margin: 40px 0 16px;
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    .immersive-content-line {
+        width: 100%;
+    }
+
+    .immersive-scroll {
+        right: 0;
+        bottom: 25px;
+        gap: 8px;
+        font-size: 11px;
+    }
+
+    .immersive-scroll span {
+        font-size: 17px;
+    }
+}
+
+/* section 05 끝 */
+
+/* section 06 시작 */
+.reviews-section {
+    width: 100%;
+    min-height: 830px;
+    margin-top: 100px;
+    background-color: #000;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* 섹션 내부 요소 박스 크기 계산 */
+/* .reviews-section *,
+.reviews-section *::before,
+.reviews-section *::after {
+    box-sizing: border-box;
+} */ 
+
+.reviews-inner {
+    width: calc(100% - 80px);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 70px 0 80px;
+}
+.reviews-header {
+    margin-bottom: 48px;
+    text-align: center;
+}
+.reviews-label {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #A8A8A8;
+}
+.reviews-title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+}
+.reviews-description {
+    margin: 10px 0 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #CECECE;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 90px;
+    row-gap: 50px;
+}
+.reviews-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 230px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+.reviews-card:hover {
+    background-color: #252525;
+    transform: translateY(-5px);
+}
+.reviews-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.reviews-stars {
+    font-size: 14px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    color: #F5F5F5;
+}
+.reviews-date {
+    font-size: 13px;
+    font-weight: 400;
+
+    white-space: nowrap;
+    color: #A8A8A8;
+}
+.reviews-text {
+    margin: 10px 0 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #F5F5F5;
+    overflow-wrap: break-word;
+}
+.reviews-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #A8A8A8;
+}
+.reviews-avatar {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.reviews-user {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 7px;
+}
+.reviews-name {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #F5F5F5;
+}
+.reviews-user-info {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #A8A8A8;
+}
+
+
+/* ==========================================
+   TABLET : 1024px 이하
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .reviews-section {
+        margin-top: 80px;
+        min-height: auto;
+    }
+
+    .reviews-inner {
+        width: calc(100% - 64px);
+        padding: 70px 0;
+    }
+
+    .reviews-title {
+        font-size: 34px;
+    }
+
+    /* 태블릿에서는 2열 */
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 24px;
+        row-gap: 24px;
+    }
+
+    .reviews-card {
+        min-height: 230px;
+        padding: 22px;
+    }
+}
+
+
+/* ==========================================
+   TABLET / MOBILE : 768px 이하
+========================================== */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+        margin-top: 60px;
+    }
+
+    .reviews-inner {
+        width: calc(100% - 40px);
+        padding: 60px 0;
+    }
+
+    .reviews-header {
+        margin-bottom: 36px;
+    }
+
+    .reviews-label {
+        font-size: 13px;
+    }
+
+    .reviews-title {
+        font-size: 30px;
+    }
+
+    .reviews-description {
+        font-size: 12px;
+    }
+
+    /* 모바일에서는 1열 */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        max-width: 520px;
+        margin: 0 auto;
+    }
+
+    .reviews-card {
+        min-height: 210px;
+        padding: 22px;
+    }
+
+    .reviews-text {
+        font-size: 13px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE : 480px 이하
+========================================== */
+
+@media (max-width: 480px) {
+
+    .reviews-section {
+        margin-top: 40px;
+    }
+
+    .reviews-inner {
+        width: calc(100% - 32px);
+        padding: 50px 0;
+    }
+
+    .reviews-header {
+        margin-bottom: 30px;
+    }
+
+    .reviews-label {
+        font-size: 12px;
+    }
+
+    .reviews-title {
+        font-size: 26px;
+    }
+
+    .reviews-description {
+        font-size: 12px;
+    }
+
+    .reviews-grid {
+        gap: 16px;
+    }
+
+    .reviews-card {
+        min-height: 200px;
+        padding: 18px;
+    }
+
+    .reviews-stars {
+        font-size: 14px;
+    }
+
+    .reviews-date {
+        font-size: 11px;
+    }
+
+    .reviews-text {
+        margin: 16px 0 20px;
+
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .reviews-profile {
+        padding-top: 14px;
+        gap: 10px;
+    }
+
+    .reviews-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .reviews-name {
+        font-size: 12px;
+    }
+
+    .reviews-user-info {
+        font-size: 10px;
+    }
+}
+/* section 06 끝 */
+
+/* section 07 시작 */
+.visit-section {
+    width: 100%;
+    min-height: 830px;
+    margin-top: 100px;
+    background-color: #000;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* 내부 요소 박스 크기 계산 */
+/* .visit-section *,
+.visit-section *::before,
+.visit-section *::after {
+    box-sizing: border-box;
+} */
+
+.visit-inner {
+    display: grid;
+    grid-template-columns: 380px minmax(0, 1fr);
+    column-gap: 160px;
+    width: calc(100% - 80px);
+    max-width: 1640px;
+    margin: 0 auto;
+    padding: 105px 0 100px;
+}
+.visit-label {
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #CECECE;
+}
+.visit-title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+.visit-intro {
+    margin: 5px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #CECECE;
+}
+.visit-hours {
+    margin-top: 70px;
+}
+.visit-info-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #F5F5F5;
+}
+.visit-icon {
+    display: block;
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.visit-hours-time {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+}
+.visit-hours-note {
+    font-size: 16px;
+    color: #CECECE;
+    padding: 0 0 10px 0;
+}
+
+/* 운영시간 아래 구분선 */
+/* .visit-info-line {
+    width: 335px;
+    max-width: 100%;
+    height: 1px;
+
+    margin: 18px 0 12px;
+
+    background-color: #555;
+} */
+
+.visit-notice {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    border-top: 1px solid #A8A8A8;
+    padding: 10px 0;
+    color: #A8A8A8;
+}
+.visit-location {
+    margin-top: 80px;
+}
+.visit-location-title {
+    margin: 0 0 5px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+}
+.visit-address {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+}
+.visit-transport {
+    margin: 5px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #A8A8A8;
+}
+.visit-tickets {
+    min-width: 0;
+}
+.visit-tickets-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding:10px;
+}
+.visit-tickets-label {
+    padding:0 0 10px;
+    font-size: 20px;
+    color: #F5F5F5;
+}
+.visit-tickets-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+.visit-discount-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border: 1px solid #CECECE;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #F5F5F5;
+}
+.visit-price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(16px, 4.3vw, 105px);
+    margin-top: 50px;
+}
+.visit-price-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 200px;
+    padding: 40px;
+    background-color: #333333;
+    border-radius: 30px;
+    text-align: center;
+}
+.visit-price-type {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #CECECE;
+}
+
+/* 금액 */
+.visit-price {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #fff;
+}
+
+/* 원 단위 */
+.visit-price span {
+    font-size: 16px;
+    font-weight: 500;
+}
+.visit-price-note {
+    margin: 10px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #CECECE;
+}
+.visit-price-notices {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 300px;
+    margin-top: 20px;
+}
+.visit-price-notices p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #CECECE;
+}
+.visit-booking {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 50px;
+}
+.visit-booking-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 66px;
+    padding: 20px 50px;
+    background-color: #000;
+    border: 1px solid #F5F5F5;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+.visit-booking-btn:hover {
+    background-color: #252525;
+    border-color: #fff;
+}
+
+/* 키보드 포커스 */
+.visit-booking-btn:focus-visible,
+.visit-contact-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+
+.visit-contact {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 200px;
+    margin-top: 20px;
+}
+
+.visit-contact-title {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 0 20px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.visit-contact-list {
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.visit-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #F5F5F5;
+}
+
+.visit-contact-link:hover {
+    color: #fff;
+}
+.visit-contact-divider {
+    width: 1px;
+    height: 20px;
+    background: #A8A8A8;
+}
+.visit-contact-note {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    margin: 0;
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: right;
+    color: #A8A8A8;
+}
+
+
+/* ==========================================
+   TABLET : 1024px 이하
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .visit-section {
+        margin-top: 80px;
+        min-height: auto;
+    }
+
+    /* 좌우 배치를 위아래로 변경 */
+    .visit-inner {
+        grid-template-columns: 1fr;
+        gap: 65px;
+
+        width: calc(100% - 64px);
+        padding: 80px 0;
+    }
+
+    /* 방문 정보 2열 배치 */
+    .visit-info {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 32px;
+        row-gap: 40px;
+    }
+
+    .visit-heading {
+        grid-column: 1 / -1;
+    }
+
+    .visit-hours,
+    .visit-location {
+        margin-top: 0;
+    }
+
+    .visit-title {
+        font-size: 34px;
+    }
+
+    /* 요금 카드 */
+    .visit-price-grid {
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .visit-price-card {
+        min-height: 180px;
+        border-radius: 22px;
+    }
+
+    .visit-price {
+        font-size: 26px;
+    }
+
+    .visit-booking {
+        margin-top: 40px;
+    }
+}
+
+
+/* ==========================================
+   TABLET / MOBILE : 768px 이하
+========================================== */
+
+@media (max-width: 768px) {
+
+    .visit-section {
+        margin-top: 60px;
+    }
+
+    .visit-inner {
+        width: calc(100% - 40px);
+        gap: 55px;
+
+        padding: 65px 0;
+    }
+
+    /* 방문 정보 세로 배치 */
+    .visit-info {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .visit-title {
+        font-size: 30px;
+    }
+
+    .visit-hours {
+        margin-top: 45px;
+    }
+
+    .visit-location {
+        margin-top: 50px;
+    }
+
+    .visit-hours-time {
+        font-size: 24px;
+    }
+
+    .visit-location-title {
+        font-size: 21px;
+    }
+
+    /* 요금 카드 세로 배치 */
+    .visit-price-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        margin-top: 35px;
+    }
+
+    .visit-price-card {
+        min-height: 155px;
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+    .visit-price-notices {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .visit-booking {
+        gap: 14px;
+        margin-top: 35px;
+    }
+
+    .visit-booking-btn {
+        min-height: 58px;
+        font-size: 14px;
+    }
+
+    .visit-contact {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 12px;
+    }
+
+    .visit-contact-title,
+    .visit-contact-list,
+    .visit-contact-note {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .visit-contact-note {
+        margin-top: 10px;
+        text-align: left;
+    }
+}
+
+
+/* ==========================================
+   MOBILE : 480px 이하
+========================================== */
+
+@media (max-width: 480px) {
+
+    .visit-section {
+        margin-top: 40px;
+    }
+
+    .visit-inner {
+        width: calc(100% - 32px);
+        padding: 55px 0;
+    }
+
+    .visit-label,
+    .visit-tickets-label {
+        font-size: 12px;
+    }
+
+    .visit-title {
+        font-size: 28px;
+    }
+
+    .visit-intro {
+        font-size: 12px;
+    }
+
+    .visit-info-label {
+        font-size: 13px;
+    }
+
+    .visit-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .visit-location-title {
+        font-size: 18px;
+    }
+
+    .visit-address {
+        font-size: 13px;
+    }
+
+    .visit-tickets-title {
+        font-size: 21px;
+    }
+
+    .visit-discount-badge {
+        font-size: 11px;
+    }
+
+    .visit-price-type {
+        font-size: 13px;
+    }
+
+    .visit-price {
+        font-size: 26px;
+    }
+
+    /* 예매 버튼 1열 */
+    .visit-booking {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .visit-booking-btn {
+        min-height: 54px;
+    }
+
+    .visit-contact-list {
+        gap: 12px;
+    }
+
+    .visit-contact-link {
+        font-size: 12px;
+    }
+
+    .visit-contact-divider {
+        display: none;
+    }
+}
+
+/* 모션 감소 설정 */
+@media (prefers-reduced-motion: reduce) {
+    .visit-booking-btn {
+        transition: none;
+    }
+}
+
+/* section 07 끝 */
+
+/* footer 시작 */
+.orbita-footer {
+    width: 100%;
+    margin-top: 100px;
+    background-color: #000;
+    color: #fff;
+    border-top:1px solid #fff;
+    box-sizing: border-box;
+}
+
+/* 푸터 내부 요소 */
+.orbita-footer *,
+.orbita-footer *::before,
+.orbita-footer *::after {
+    box-sizing: border-box;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 550px;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+    padding:20px 0;
+}
+.footer-logo {
+    display: block;
+    width: 500px;
+    max-width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+.footer-slogan {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    color: #F5F5F5;
+}
+.footer-bottom {
+    width: 100%;
+    min-height: 310px;
+    background-color: #000;
+}
+.footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 80px);
+    max-width: 1640px;
+    min-height: 310px;
+    margin: 0 auto;
+    padding: 30px 0 30px;
+}
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #A8A8A8;
+    transition: color 0.3s ease;
+}
+.footer-social-link:hover {
+    color: #fff;
+}
+.footer-arrow-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.footer-social-link:hover .footer-arrow-icon {
+    transform: translate(3px, -3px);
+}
+.footer-bottom-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 130px;
+}
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-copyright {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    color: #A8A8A8;
+}
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+.footer-legal-links a {
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #A8A8A8;
+    transition: color 0.3s ease;
+}
+.footer-legal-links a:hover {
+    color: #fff;
+}
+.footer-back {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.3s ease;
+}
+.footer-back:hover {
+    opacity: 0.7;
+}
+.footer-rocket-icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.footer-back span {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+.orbita-footer a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+}
+
+
+/* ==========================================
+   TABLET : 1024px 이하
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .orbita-footer {
+        margin-top: 80px;
+    }
+
+    .footer-brand {
+        min-height: 470px;
+        padding: 45px 20px;
+    }
+
+    .footer-logo {
+        width: 370px;
+        height: 290px;
+    }
+
+    .footer-slogan {
+        margin-top: 26px;
+        font-size: 36px;
+    }
+
+    .footer-bottom-inner {
+        width: calc(100% - 64px);
+        min-height: 280px;
+        padding: 30px 0 50px;
+    }
+
+    .footer-social {
+        gap: 50px;
+    }
+
+    .footer-social-link {
+        font-size: 14px;
+    }
+
+    .footer-copyright,
+    .footer-legal-links a {
+        font-size: 13px;
+    }
+
+    .footer-legal-links {
+        gap: 35px;
+    }
+
+    .footer-back span {
+        font-size: 18px;
+    }
+}
+
+
+/* ==========================================
+   TABLET / MOBILE : 768px 이하
+========================================== */
+
+@media (max-width: 768px) {
+
+    .orbita-footer {
+        margin-top: 60px;
+    }
+
+    .footer-brand {
+        min-height: 390px;
+        padding: 45px 20px;
+    }
+
+    .footer-logo {
+        width: 320px;
+        height: 260px;
+    }
+
+    .footer-slogan {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    .footer-bottom-inner {
+        width: calc(100% - 40px);
+
+        min-height: auto;
+        padding: 35px 0 45px;
+
+        gap: 65px;
+    }
+
+    .footer-social {
+        gap: 35px;
+    }
+
+    .footer-social-link {
+        font-size: 13px;
+    }
+
+    .footer-arrow-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 모바일에서는 세로 배치 */
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
+    }
+
+    /* 상단 이동 버튼을 저작권 위로 */
+    .footer-back {
+        order: -1;
+        align-items: center;
+    }
+
+    .footer-rocket-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .footer-back span {
+        font-size: 17px;
+    }
+
+    /* 저작권 중앙 정렬 */
+    .footer-legal {
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-legal-links {
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================
+   MOBILE : 480px 이하
+========================================== */
+
+@media (max-width: 480px) {
+
+    .orbita-footer {
+        margin-top: 40px;
+    }
+
+    /* 로고 영역 */
+    .footer-brand {
+        min-height: auto;
+        padding: 50px 16px 45px;
+    }
+
+    .footer-logo {
+        width: min(100%, 280px);
+        height: 220px;
+    }
+
+    .footer-slogan {
+        margin-top: 18px;
+
+        font-size: 23px;
+        line-height: 1.4;
+    }
+
+    /* 하단 영역 */
+    .footer-bottom-inner {
+        width: calc(100% - 32px);
+
+        padding: 30px 0 40px;
+        gap: 55px;
+    }
+
+    /* SNS */
+    .footer-social {
+        gap: 28px;
+    }
+
+    .footer-social-link {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .footer-arrow-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* 저작권 */
+    .footer-copyright {
+        font-size: 11px;
+    }
+
+    .footer-legal-links {
+        gap: 24px;
+    }
+
+    .footer-legal-links a {
+        font-size: 11px;
+    }
+
+    /* BACK TO ORBITA */
+    .footer-back span {
+        font-size: 16px;
+    }
+
+    .footer-rocket-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* 움직임 최소화 환경 */
+@media (prefers-reduced-motion: reduce) {
+    .footer-social-link,
+    .footer-arrow-icon,
+    .footer-legal-links a,
+    .footer-back {
+        transition: none;
+    }
+}
+
+
+
+
+
+/* footer 끝 */

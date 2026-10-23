@@ -1,0 +1,230 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* 문서
+   ========================================================================== */
+
+/* 기본 줄 높이 통일 및 iOS 화면 회전 시 글자 크기 자동 조정 방지 */
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 본문의 기본 바깥 여백 제거 */
+body {
+  margin: 0;
+}
+
+/* IE에서 main 요소의 표시 방식 보정 */
+main {
+  display: block;
+}
+
+/* section, article 내부를 포함한 h1의 크기와 여백 통일 */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* 콘텐츠 그룹
+   ========================================================================== */
+
+/* Firefox의 크기 계산 및 구형 Edge·IE의 넘침 표시 보정 */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+/* 고정폭 글꼴의 크기 상속과 배율 보정 */
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* 텍스트
+   ========================================================================== */
+
+/* IE 10에서 링크 활성화 시 나타나는 회색 배경 제거 */
+a {
+  background-color: transparent;
+}
+
+/* 약어의 밑줄 표시 방식 보정 */
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/* 강조 텍스트의 굵기 보정 */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* 코드 관련 요소의 고정폭 글꼴 크기 보정 */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* 작은 글자 크기 통일 */
+small {
+  font-size: 80%;
+}
+
+/* 아래 첨자와 위 첨자가 줄 높이에 영향을 주지 않도록 설정 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* 이미지
+   ========================================================================== */
+
+/* IE 10에서 링크 내부 이미지의 테두리 제거 */
+img {
+  border-style: none;
+}
+
+/* 폼
+   ========================================================================== */
+
+/* 폼 요소의 글꼴과 줄 높이 통일 및 기본 여백 제거 */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* IE와 구형 Edge에서 넘치는 콘텐츠 표시 보정 */
+button,
+input {
+  overflow: visible;
+}
+
+/* 버튼과 선택 상자에 상속되는 대소문자 변환 해제 */
+button,
+select {
+  text-transform: none;
+}
+
+/* iOS와 Safari에서 버튼 계열 요소의 스타일 적용 문제 보정 */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* Firefox 버튼 내부의 테두리와 안쪽 여백 제거 */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Firefox의 포커스 표시 복원 */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* fieldset의 안쪽 여백 보정 */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/* legend의 줄바꿈, 색상 상속 및 크기 계산 보정 */
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+/* 진행률 표시 요소의 수직 정렬 보정 */
+progress {
+  vertical-align: baseline;
+}
+
+/* IE에서 textarea의 불필요한 기본 세로 스크롤바 제거 */
+textarea {
+  overflow: auto;
+}
+
+/* IE 10에서 체크박스와 라디오 버튼의 크기 계산 및 여백 보정 */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Chrome 숫자 입력의 증감 버튼 커서 관련 문제 보정 */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* 검색 입력창의 외형 및 포커스 외곽선 위치 보정 */
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/* macOS의 Chrome·Safari 검색 입력창 내부 장식 제거 */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* Safari 파일 업로드 버튼의 외형과 글꼴 상속 보정 */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/* 상호작용 요소
+   ========================================================================== */
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/* 숨김 요소
+   ========================================================================== */
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}

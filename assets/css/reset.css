@@ -1,0 +1,99 @@
+/* reset.css */
+@charset "UTF-8";
+
+/* 1. padding과 border를 요소의 지정 너비·높이에 포함 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. 기본 여백 초기화 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd,
+ul,
+ol,
+pre {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+}
+
+/* 3. 문서 기본 설정 */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* 4. 제목의 크기와 굵기는 프로젝트 CSS에서 지정 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 5. 내비게이션 등 기호가 필요 없는 목록에 선택 적용 */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* 6. 이미지·동영상의 하단 공백과 영역 넘침 방지 */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 7. 폼 요소의 글꼴을 부모 요소와 통일 */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* 8. 버튼의 브라우저 기본 여백 정리 */
+button {
+  margin: 0;
+}
+
+/* 9. textarea는 세로 방향으로 크기 조절 허용 */
+textarea {
+  resize: vertical;
+}
+
+/* 10. 테이블 셀 사이의 기본 간격 제거 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 11. hidden 속성의 숨김 동작 유지 */
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
