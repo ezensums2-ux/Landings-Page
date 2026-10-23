@@ -554,15 +554,16 @@
     padding-bottom: 0;
 }
 
+
+
 /* 이미지 3장에 해당하는 스크롤 공간 */
 .season-gallery {
     position: relative;
     width: 100%;
     height: 300vh;
     height: 300dvh;
-    margin-top: 150px;
+    margin-top: 100px;
     background-color: #000;
-    opacity: 0.7;
 }
 
 /* 갤러리를 스크롤하는 동안 화면에 고정 */
@@ -612,6 +613,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 0.7;
 }
 
 /* 태블릿 */
@@ -964,327 +966,364 @@
 
 /* section04 시작 */
 
-.worlds-section{
-  position: relative;
-  width: 100%;
-  margin-top: 100px;
-  min-height: 830px;
-  background: #000;
-  overflow: hidden;
+.worlds-section {
+    --worlds-image: url("../images/worlds-bg.jpg");
+    --worlds-height: 100vh;
+    --worlds-height: 100svh;
+    --worlds-intro-height: 830px;
+
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    margin: 100px 0;
+    padding: 0;
+    color: #fff;
+    background: #000;
+
+    /* 배경 고정을 위해 overflow: hidden을 사용하지 않습니다. */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
 }
+
+.worlds-section,
+.worlds-section *,
+.worlds-section::before {
+    box-sizing: border-box;
+}
+
+/* 하나의 배경이 소개와 컨셉 목록 뒤에 계속 유지됩니다. */
 .worlds-section::before {
     content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../images/worlds-bg.jpg");
+    grid-column: 1;
+    grid-row: 1 / 3;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    width: 100%;
+    height: var(--worlds-height);
+    z-index: 0;
+    pointer-events: none;
+
+    /* 이미지 위에 불투명도 70%의 검은색을 겹칩니다. */
+    background-color: #000;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        var(--worlds-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.5;
-    z-index: 0;
 }
-.worlds-inner {
+
+/* 첫 번째 영역 : 기존 소개 */
+.worlds-section .worlds-inner {
+    grid-column: 1;
+    grid-row: 1;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: calc(100% - 160px);
     max-width: 1712px;
-    min-height: 830px;
+    min-height: max(var(--worlds-intro-height), var(--worlds-height));
     margin: 0 auto;
-    color: #ffffff;
+    padding: 100px 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 64px;
 }
-.worlds-content {
-    position: absolute;
-    top: 100px;
-    left: 0;
+
+.worlds-section .worlds-content {
     width: 520px;
+    max-width: 100%;
 }
-.worlds-label-wrap {
+
+.worlds-section .worlds-label-wrap {
     display: flex;
     align-items: center;
     gap: 14px;
     margin-bottom: 26px;
 }
-.worlds-label {
+
+.worlds-section .worlds-label {
     flex-shrink: 0;
     margin: 0;
     font-size: 20px;
     font-weight: 400;
     line-height: 1;
-    color: #CECECE;
+    color: #cecece;
 }
-.worlds-label-line {
+
+.worlds-section .worlds-label-line {
     display: block;
-    width: 250px;
+    flex: 1;
+    max-width: 250px;
     height: 1px;
-    background: #CECECE;
+    background: #cecece;
 }
-.worlds-title {
+
+.worlds-section .worlds-title {
     margin: 0;
     font-size: 56px;
     font-weight: 700;
     line-height: 1.18;
     letter-spacing: -0.03em;
-    color: #ffffff;
+    overflow-wrap: anywhere;
+    color: #fff;
 }
-.worlds-subtitle {
+
+.worlds-section .worlds-subtitle {
     margin: 62px 0 20px;
     font-size: 28px;
     font-weight: 500;
     line-height: 1.4;
     letter-spacing: -0.03em;
-    color: #ffffff;
+    color: #fff;
 }
-.worlds-content-line {
+
+.worlds-section .worlds-content-line {
     display: block;
     width: 100%;
     height: 1px;
-    background: #CECECE;
+    background: #cecece;
 }
-.worlds-description {
-    position: absolute;
-    left: 63%;
-    bottom: 60px;
-    transform: translateX(-50%);
-    width: max-content;
-    margin: 0;
+
+.worlds-section .worlds-description {
+    align-self: flex-end;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 12% 0 0;
     text-align: left;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: -0.02em;
-    color: #ffffff;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    color: #fff;
 }
-.worlds-description strong {
+
+.worlds-section .worlds-description strong {
     font-weight: 700;
-    color: #ffffff;
+    color: #fff;
 }
 
+/* 두 번째 영역 : 모든 컨셉 목록 */
+.worlds-section .concept-stage {
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    z-index: 1;
+    width: calc(100% - 160px);
+    max-width: 1712px;
+    min-height: var(--worlds-height);
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex;
+    align-items: flex-end;
+}
 
-/* ==================================================
-   TABLET
-   1024px 이하
-================================================== */
+.worlds-section .concept-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
+.worlds-section .concept-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.worlds-section .concept-button {
+    appearance: none;
+    width: 100%;
+    min-height: 88px;
+    margin: 0;
+    padding: 20px 8px;
+    display: grid;
+    grid-template-columns: 56px minmax(150px, 240px) minmax(0, 1fr) 32px;
+    align-items: center;
+    gap: 20px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #b3b3b3;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.worlds-section .concept-number {
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.worlds-section .concept-name {
+    font-size: clamp(24px, 2.5vw, 36px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.worlds-section .concept-description {
+    font-size: 16px;
+    line-height: 1.5;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.worlds-section .concept-arrow {
+    display: block;
+    width: 28px;
+    height: 31px;
+    justify-self: end;
+}
+
+/* SVG의 path에는 fill="currentColor"를 사용하세요. */
+.worlds-section .concept-button.is-active {
+    color: #fff;
+}
+
+.worlds-section .concept-button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
+}
+
+/* 태블릿 */
 @media (max-width: 1024px) {
-
     .worlds-section {
-        margin-top: 80px;
-
-        min-height: 720px;
+        --worlds-intro-height: 720px;
     }
 
-
-    .worlds-inner {
+    .worlds-section .worlds-inner,
+    .worlds-section .concept-stage {
         width: calc(100% - 80px);
-        min-height: 720px;
     }
 
+    .worlds-section .worlds-inner { padding: 80px 0 55px; }
+    .worlds-section .worlds-content { width: 460px; }
+    .worlds-section .worlds-title { font-size: 42px; }
+    .worlds-section .worlds-subtitle { margin-top: 50px; font-size: 20px; }
+    .worlds-section .worlds-label { font-size: 14px; }
+    .worlds-section .worlds-label-line { max-width: 180px; }
+    .worlds-section .worlds-description { font-size: 14px; }
 
-    .worlds-content {
-        top: 80px;
-
-        width: 460px;
-    }
-
-
-    .worlds-title {
-        font-size: 42px;
-    }
-
-
-    .worlds-subtitle {
-        margin-top: 50px;
-
-        font-size: 20px;
-    }
-
-
-    .worlds-label {
-        font-size: 14px;
-    }
-
-
-    .worlds-label-line {
-        width: 180px;
-    }
-
-
-    .worlds-description {
-        bottom: 55px;
-
-        font-size: 14px;
+    .worlds-section .concept-button {
+        grid-template-columns: 40px 160px minmax(0, 1fr) 28px;
+        gap: 16px;
     }
 }
 
-
-/* ==================================================
-   TABLET / MOBILE
-   768px 이하
-================================================== */
-
+/* 모바일 */
 @media (max-width: 768px) {
-
     .worlds-section {
-        margin-top: 60px;
-
-        min-height: 680px;
-
-        /*
-            모바일에서는 인물/중요한 이미지가
-            잘리지 않도록 필요에 따라 조정
-        */
-        background-position: 55% center;
+        --worlds-intro-height: 680px;
     }
 
+    /* 배경은 section 자체가 아닌 ::before에 있습니다. */
+    .worlds-section::before { background-position: 55% center; }
 
-    .worlds-overlay {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(0, 0, 0, 0.58) 0%,
-                rgba(0, 0, 0, 0.25) 55%,
-                rgba(0, 0, 0, 0.58) 100%
-            );
-    }
-
-
-    .worlds-inner {
+    .worlds-section .worlds-inner,
+    .worlds-section .concept-stage {
         width: calc(100% - 48px);
-        min-height: 680px;
     }
 
+    .worlds-section .worlds-inner { padding: 65px 0 45px; }
+    .worlds-section .worlds-content { width: 100%; max-width: 420px; }
+    .worlds-section .worlds-label-wrap { margin-bottom: 22px; }
+    .worlds-section .worlds-label { font-size: 12px; }
+    .worlds-section .worlds-label-line { max-width: 130px; }
+    .worlds-section .worlds-title { font-size: 36px; }
+    .worlds-section .worlds-subtitle { margin-top: 42px; font-size: 18px; }
+    .worlds-section .worlds-content-line { width: 90%; }
 
-    .worlds-content {
-        top: 65px;
-
+    .worlds-section .worlds-description {
+        align-self: flex-start;
         width: 100%;
-        max-width: 420px;
-    }
-
-
-    .worlds-label-wrap {
-        margin-bottom: 22px;
-    }
-
-
-    .worlds-label {
-        font-size: 12px;
-    }
-
-
-    .worlds-label-line {
-        width: 130px;
-    }
-
-
-    .worlds-title {
-        font-size: 36px;
-    }
-
-
-    .worlds-subtitle {
-        margin-top: 42px;
-
-        font-size: 18px;
-    }
-
-
-    .worlds-content-line {
-        width: 90%;
-    }
-
-
-    .worlds-description {
-        left: 0;
-        bottom: 45px;
-
-        transform: none;
-
-        width: 100%;
-
+        margin: 0;
         font-size: 13px;
-
-        text-align: left;
-    }
-}
-
-
-/* ==================================================
-   MOBILE
-   480px 이하
-================================================== */
-
-@media (max-width: 480px) {
-
-    .worlds-section {
-        margin-top: 50px;
-
-        min-height: 620px;
-
-        background-position: 58% center;
     }
 
+    .worlds-section .concept-stage { padding: 40px 0; }
 
-    .worlds-inner {
-        width: calc(100% - 32px);
-        min-height: 620px;
+    .worlds-section .concept-button {
+        grid-template-columns: 28px minmax(0, 1fr) 24px;
+        grid-template-rows: auto auto;
+        column-gap: 12px;
+        row-gap: 6px;
+        min-height: 96px;
+        padding: 18px 4px;
     }
 
-
-    .worlds-content {
-        top: 50px;
-    }
-
-
-    .worlds-label-wrap {
-        gap: 10px;
-
-        margin-bottom: 20px;
-    }
-
-
-    .worlds-label {
-        font-size: 11px;
-    }
-
-
-    .worlds-label-line {
-        flex: 1;
-
-        max-width: 110px;
-    }
-
-
-    .worlds-title {
-        font-size: 31px;
-        line-height: 1.15;
-    }
-
-
-    .worlds-subtitle {
-        margin-top: 35px;
-
-        font-size: 17px;
-    }
-
-
-    .worlds-content-line {
-        width: 100%;
-    }
-
-
-    .worlds-description {
-        bottom: 35px;
-
+    .worlds-section .concept-number {
+        grid-column: 1;
+        grid-row: 1 / 3;
         font-size: 12px;
-        line-height: 1.55;
     }
 
+    .worlds-section .concept-name {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 25px;
+    }
 
-    .worlds-description br {
-        display: none;
+    .worlds-section .concept-description {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 13px;
+    }
+
+    .worlds-section .concept-arrow {
+        grid-column: 3;
+        grid-row: 1 / 3;
+        width: 22px;
+        height: auto;
     }
 }
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+    .worlds-section {
+        --worlds-intro-height: 620px;
+    }
+
+    .worlds-section::before { background-position: 58% center; }
+
+    .worlds-section .worlds-inner,
+    .worlds-section .concept-stage {
+        width: calc(100% - 32px);
+    }
+
+    .worlds-section .worlds-inner { padding: 50px 0 35px; }
+    .worlds-section .worlds-label-wrap { gap: 10px; margin-bottom: 20px; }
+    .worlds-section .worlds-label { font-size: 11px; }
+    .worlds-section .worlds-label-line { max-width: 110px; }
+    .worlds-section .worlds-title { font-size: 31px; line-height: 1.15; }
+    .worlds-section .worlds-subtitle { margin-top: 35px; font-size: 17px; }
+    .worlds-section .worlds-content-line { width: 100%; }
+    .worlds-section .worlds-description { font-size: 12px; line-height: 1.55; }
+    .worlds-section .worlds-description br { display: none; }
+    .worlds-section .concept-name { font-size: 22px; }
+    .worlds-section .concept-description { font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .worlds-section .concept-button { transition: none; }
+}
+
+/* SECTION 04 끝 */
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* section 04 끝 */
 
 /* section 05 시작 */
