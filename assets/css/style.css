@@ -548,118 +548,99 @@
   }
 }
 
+   /* SECTION 02 : 스크롤 이미지 슬라이더 */
 
-/* ==========================================
-   SECTION 02 : FULL SCREEN SLIDER
-========================================== */
-
-/* 기존 섹션 하단 여백 제거 */
 .season {
     padding-bottom: 0;
 }
 
-/* 슬라이드 전체 영역 */
+/* 이미지 3장에 해당하는 스크롤 공간 */
 .season-gallery {
     position: relative;
     width: 100%;
     height: 300vh;
-    margin-top: 60px;
-    background-color: #000000;
+    height: 300dvh;
+    margin-top: 150px;
+    background-color: #000;
+    opacity: 0.7;
 }
 
-/* 스크롤할 때 화면에 고정되는 영역 */
+/* 갤러리를 스크롤하는 동안 화면에 고정 */
 .season-gallery-sticky {
     position: sticky;
     top: 0;
-
     width: 100%;
     height: 100vh;
-
+    height: 100dvh;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #000;
 }
 
-/* 개별 이미지 슬라이드 */
+/* 이미지를 같은 위치에 겹쳐 배치 */
 .season-gallery-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-
+    inset: 0;
     width: 100%;
     height: 100%;
+    background-color: #000;
 
+    /* 처음에는 화면 아래에 배치 */
     transform: translateY(100%);
+
+    /* 스크롤 위치를 바로 반영 */
+    transition: none;
 }
 
-/* 첫 번째 이미지 */
+/* 첫 번째 이미지는 처음부터 표시 */
 .season-gallery-slide:nth-child(1) {
     z-index: 1;
     transform: translateY(0);
 }
 
-/* 두 번째 이미지 */
 .season-gallery-slide:nth-child(2) {
     z-index: 2;
 }
 
-/* 세 번째 이미지 */
 .season-gallery-slide:nth-child(3) {
     z-index: 3;
 }
 
-/* 이미지 공통 설정 */
+/* PC, 태블릿, 모바일 공통 */
 .season .season-gallery-slide img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: center;
 }
 
-/* ==========================================
-   TABLET : 1024px 이하
-========================================== */
-
+/* 태블릿 */
 @media (max-width: 1024px) {
+    .season-gallery {
+        margin-top: 100px;
+    }
+}
+.season .season-gallery-slide img {
+        object-fit: contain;
+        object-position: center;
+    }
 
+/* 모바일 */
+@media (max-width: 768px) {
+    .season-gallery {
+        margin-top: 70px;
+    }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
     .season-gallery {
         margin-top: 50px;
     }
-
 }
 
-/* ==========================================
-   MOBILE : 768px 이하
-========================================== */
-
-@media (max-width: 768px) {
-
-    .season-gallery {
-        margin-top: 40px;
-    }
-
-}
-
-/* ==========================================
-   SMALL MOBILE : 480px 이하
-========================================== */
-
-@media (max-width: 480px) {
-
-    .season-gallery {
-        margin-top: 30px;
-    }
-
-}
-
-/* ==========================================
-   움직임 감소 설정
-========================================== */
-
+/* 움직임 감소 설정: 이미지들을 세로로 표시 */
 @media (prefers-reduced-motion: reduce) {
-
     .season-gallery {
         height: auto;
     }
@@ -672,49 +653,12 @@
 
     .season-gallery-slide {
         position: relative;
+        inset: auto;
         height: 100vh;
+        height: 100dvh;
         transform: none !important;
     }
-
 }
-/* PC */
-.season .season-gallery-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* 태블릿 */
-@media (max-width: 1024px) {
-
-    .season .season-gallery-slide img {
-        object-fit: contain;
-        object-position: center;
-    }
-
-}
-
-/* 모바일 */
-@media (max-width: 768px) {
-
-    .season .season-gallery-slide img {
-        object-fit: contain;
-        object-position: center;
-    }
-
-}
-
-/* 작은 모바일 */
-@media (max-width: 480px) {
-
-    .season .season-gallery-slide img {
-        object-fit: contain;
-        object-position: center;
-    }
-
-}
-
 
 
 /* section02 끝 */
