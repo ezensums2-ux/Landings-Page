@@ -146,8 +146,13 @@
                 
             </div>
             <article class="experience-card">
-                <div class="experience-image">
-                    <img src="assets/images/spring-zone.jpg" alt="벚꽃전시공간" loading="lazy">
+                <div class="experience-image" role="img" aria-label="벚꽃 전시 공간 이미지 슬라이드" data-aos="fade-left" data-aos-offset="500" data-aos-duration="500">
+                    <div class="experience-slides" aria-hidden="true">
+                        <img src="assets/images/spring-zone.jpg" alt="">
+                        <img src="assets/images/spring-zone4.jpg" alt="">
+                        <img src="assets/images/spring-zone3.jpg" alt="">
+                        <img src="assets/images/spring-zone2.jpg" alt="">
+                    </div>
                     <span class="experience-label">INTERACTIVE PHOTOZONE</span>
                 </div>
 
@@ -166,29 +171,6 @@
 
         </div>
 
-        <div class="season-gallery">
-
-    <div class="season-gallery-sticky">
-
-        <div class="season-gallery-slide">
-            <img
-                src="assets/images/spring-slide1.jpg"
-                alt="슬라이드 1">
-        </div>
-
-        <div class="season-gallery-slide">
-            <img
-                src="assets/images/spring-slide2.jpg"
-                alt="슬라이드 2">
-        </div>
-
-        <div class="season-gallery-slide">
-            <img
-                src="assets/images/spring-slide3.jpg"
-                alt="슬라이드 3">
-        </div>
-    </div>
-</div>
     </section>
 
     <section class="about-section" id="about" data-stage="0">
@@ -210,23 +192,23 @@
             <p class="about-label about-reveal" data-about-step="0">
                 ABOUT ORBITA
             </p>
-            <h2 class="about-title about-reveal" data-about-step="0">
+            <h2 class="about-title about-reveal" data-about-step="1">
                 우주의 깊은 침묵 속에서,<br>
                 우리는 새로운 세계를 발견했습니다. 
             </h2>
             <div class="about-description">
-                <p class="about-reveal" data-about-step="1">
+                <p class="about-reveal" data-about-step="2">
                     ORBITA(오르비타)는 우주 공간의 궤도(Orbit)에서 영감을 받아 탄생한 차세대 몰입형 미디어아트 & 인터랙티브 <br> 공간디자인 전시관입니다.
                 </p>
 
-                <p class="about-reveal" data-about-step="2">
+                <p class="about-reveal" data-about-step="3">
                   우리가 알고 있던 현실의 경계를 벗어나, 미지의 우주에서 마주한 신비로운 행성과 5가지 초자연적 감각의 세계관을 빛, 영상 맵핑, 입체 음향, 
                   그리고 반응형 공간 테크놀로지로 완벽하게 재구성했습니다. 관람객은 단순한 관조자가 아닌, 세계를 탐험하는 여행자가 되어 모든 차원을 직접 유영합니다.  
                 </p>
             </div>
 
             <div class="about-cards">
-                <article class="about-card about-reveal" data-about-step="3">
+                <article class="about-card about-reveal" data-about-step="4">
                     <span class="card-number">01</span>
                     <h3 class="card-title">
                         ASTRONOMICAL SCALE
@@ -236,7 +218,7 @@
                     </p>
                 </article>
 
-                <article class="about-card about-reveal" data-about-step="4">
+                <article class="about-card about-reveal" data-about-step="5">
                     <span class="card-number">02</span>
                     <h3 class="card-title">
                         REACTIVE SENSORY
@@ -246,7 +228,7 @@
                     </p>
                 </article>
 
-                <article class="about-card about-reveal" data-about-step="5">
+                <article class="about-card about-reveal" data-about-step="6">
                 <span class="card-number">03</span>
                   <h3 class="card-title">
                     SEASONAL RE-IMAGINE
@@ -261,6 +243,13 @@
     </section>
     
     <section class="worlds-section concept-section" id="worlds">
+        <div class="worlds-stage">
+        <div
+            class="worlds-image-layer"
+            data-aos="zoom-in-up"
+            data-aos-duration="700"
+            data-aos-offset="0"
+            aria-hidden="true"></div>
         <div class="worlds-inner">
             <div class="worlds-content">
                 <div class="worlds-label-wrap">
@@ -295,7 +284,6 @@
                 type="button"
                 class="concept-button"
                 data-concept="bloom"
-                data-image="assets/images/bloom.jpg"
                 aria-pressed="false">
 
                 <span class="concept-number">01</span>
@@ -326,7 +314,6 @@
                 type="button"
                 class="concept-button"
                 data-concept="ocean"
-                data-image="assets/images/ocean.jpg"
                 aria-pressed="false">
 
                 <span class="concept-number">02</span>
@@ -357,7 +344,6 @@
                 type="button"
                 class="concept-button"
                 data-concept="earth"
-                data-image="assets/images/earth.jpg"
                 aria-pressed="false">
 
                 <span class="concept-number">03</span>
@@ -388,7 +374,6 @@
                 type="button"
                 class="concept-button"
                 data-concept="sky"
-                data-image="assets/images/sky.jpg"
                 aria-pressed="false">
 
                 <span class="concept-number">04</span>
@@ -419,7 +404,6 @@
                 type="button"
                 class="concept-button"
                 data-concept="season"
-                data-image="assets/images/season.jpg"
                 aria-pressed="false">
 
                 <span class="concept-number">05</span>
@@ -447,7 +431,7 @@
     </ul>
 </div>
 
-
+        </div>
     </section>
 
 <section class="immersive-section" id="immersive">
@@ -1064,7 +1048,6 @@
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/slider.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init();</script>
 
