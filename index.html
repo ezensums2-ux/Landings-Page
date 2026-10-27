@@ -23,19 +23,51 @@
 </defs>
 </svg></button></div>
         <div class="header-buttons ">
-            <button type="button" class="ss-but s>
+            <a href="#season" class="ss-but">
                 SPRLNG SEASON<br>2027
-            </button>
-            <button type="button" class="icon-button" aria-label="언어 선택">
-                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </a>
+            <div class="language-selector">
+                <button type="button" class="icon-button language-toggle" aria-label="언어 선택" aria-expanded="false" aria-controls="language-menu">
+                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M16.25 0.25V8.25M16.25 0.25C12.9717 0.25 10.1092 3.46761 8.57771 8.25M16.25 0.25C19.5283 0.25 22.3908 3.46761 23.9223 8.25M16.25 8.25V16.25M16.25 8.25H23.9223M16.25 8.25H8.57771M16.25 16.25V24.25M16.25 16.25H25.1073M16.25 16.25H7.3927M16.25 24.25V32.25M16.25 24.25H23.9223M16.25 24.25H8.57771M16.25 32.25C12.9717 32.25 10.1092 29.0324 8.57771 24.25M16.25 32.25C19.5283 32.25 22.3908 29.0324 23.9223 24.25M8.57771 24.25C7.82405 21.8966 7.3927 19.1643 7.3927 16.25M8.57771 24.25H2.39326M7.3927 16.25C7.3927 13.3357 7.82405 10.6034 8.57771 8.25M7.3927 16.25H0.25M8.57771 8.25H2.39326M23.9223 8.25C24.6759 10.6034 25.1073 13.3357 25.1073 16.25M23.9223 8.25H30.1067M25.1073 16.25C25.1073 19.1643 24.6759 21.8966 23.9223 24.25M25.1073 16.25H32.25M23.9223 24.25H30.1067" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke="#F5F5F5"/>
 <path d="M0.25 16.25C0.25 25.0865 7.41354 32.25 16.25 32.25C25.0865 32.25 32.25 25.0865 32.25 16.25C32.25 7.41354 25.0865 0.25 16.25 0.25C7.41354 0.25 0.25 7.41354 0.25 16.25Z" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke="#F5F5F5"/>
-               </svg></button>
-               <button type="button" class="icon-button" aria-label="메뉴 열기">
+                    </svg>
+                </button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <p class="language-menu-label">현재 언어</p>
+                    <p class="language-current" aria-live="polite">한국어</p>
+                    <div class="language-options" role="group" aria-label="언어 선택">
+                        <button type="button" class="language-option" data-language="ko" aria-pressed="true">한국어</button>
+                        <button type="button" class="language-option" data-language="en" aria-pressed="false">English</button>
+                        <button type="button" class="language-option" data-language="zh" aria-pressed="false">中文</button>
+                        <button type="button" class="language-option" data-language="ja" aria-pressed="false">日本語</button>
+                        <button type="button" class="language-option" data-language="fr" aria-pressed="false">Français</button>
+                    </div>
+                </div>
+            </div>
+               <button type="button" class="icon-button site-menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="site-menu">
                 <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.25 16.25H32.25M0.25 32.25H32.25M0.25 0.25H32.25" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" stroke="#F5F5F5"/>
                </svg></button>
         </div>
+    </div>
+    <div class="site-menu" id="site-menu" hidden>
+        <div class="site-menu-header">
+            <span class="site-menu-brand">ORBITA</span>
+            <button type="button" class="site-menu-close" aria-label="메뉴 닫기">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </button>
+        </div>
+        <nav class="site-menu-nav" aria-label="주요 메뉴">
+            <a class="site-menu-link" href="#season">NOW IN ORBITA</a>
+            <a class="site-menu-link" href="#about">ABOUT</a>
+            <a class="site-menu-link" href="#worlds">WORLDS</a>
+            <a class="site-menu-link" href="#immersive">EXPERIENCE</a>
+            <a class="site-menu-link" href="#reviews">REVIEWS</a>
+            <a class="site-menu-link" href="#visit">VISIT</a>
+        </nav>
+        <p class="site-menu-footer">A WORLD BEYOND SPACE</p>
     </div>
 </header>
 
@@ -72,7 +104,7 @@
 
     </section>
 
-    <section class="sec02 season" aria-labelledby="season-title">
+    <section class="sec02 season" id="season" aria-labelledby="season-title">
         <div class="container season-inner">
             
             <div class="season-info">
@@ -159,10 +191,11 @@
 </div>
     </section>
 
-    <section class="about-section">
-        <div class="about-overlay"></div>
-        <div class="about-inner">
-            <div class="about-symbol" aria-hidden="true">
+    <section class="about-section" id="about" data-stage="0">
+        <div class="about-sticky">
+            <div class="about-overlay"></div>
+            <div class="about-inner">
+            <div class="about-symbol about-reveal" data-about-step="0" aria-hidden="true">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="50" height="50" fill="url(#pattern0_527_154)"/>
 <defs>
@@ -174,26 +207,26 @@
 </svg>
 
             </div>
-            <p class="about-label">
+            <p class="about-label about-reveal" data-about-step="0">
                 ABOUT ORBITA
             </p>
-            <h2 class="about-title">
+            <h2 class="about-title about-reveal" data-about-step="0">
                 우주의 깊은 침묵 속에서,<br>
                 우리는 새로운 세계를 발견했습니다. 
             </h2>
             <div class="about-description">
-                <p>
+                <p class="about-reveal" data-about-step="1">
                     ORBITA(오르비타)는 우주 공간의 궤도(Orbit)에서 영감을 받아 탄생한 차세대 몰입형 미디어아트 & 인터랙티브 <br> 공간디자인 전시관입니다.
                 </p>
 
-                <p>
+                <p class="about-reveal" data-about-step="2">
                   우리가 알고 있던 현실의 경계를 벗어나, 미지의 우주에서 마주한 신비로운 행성과 5가지 초자연적 감각의 세계관을 빛, 영상 맵핑, 입체 음향, 
                   그리고 반응형 공간 테크놀로지로 완벽하게 재구성했습니다. 관람객은 단순한 관조자가 아닌, 세계를 탐험하는 여행자가 되어 모든 차원을 직접 유영합니다.  
                 </p>
             </div>
 
             <div class="about-cards">
-                <article class="about-card">
+                <article class="about-card about-reveal" data-about-step="3">
                     <span class="card-number">01</span>
                     <h3 class="card-title">
                         ASTRONOMICAL SCALE
@@ -203,7 +236,7 @@
                     </p>
                 </article>
 
-                <article class="about-card">
+                <article class="about-card about-reveal" data-about-step="4">
                     <span class="card-number">02</span>
                     <h3 class="card-title">
                         REACTIVE SENSORY
@@ -213,7 +246,7 @@
                     </p>
                 </article>
 
-                <article class="about-card">
+                <article class="about-card about-reveal" data-about-step="5">
                 <span class="card-number">03</span>
                   <h3 class="card-title">
                     SEASONAL RE-IMAGINE
@@ -224,9 +257,10 @@
                  </article>
             </div>
         </div>
+        </div>
     </section>
     
-    <section class="worlds-section concept-section">
+    <section class="worlds-section concept-section" id="worlds">
         <div class="worlds-inner">
             <div class="worlds-content">
                 <div class="worlds-label-wrap">
