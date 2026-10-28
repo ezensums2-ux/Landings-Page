@@ -1,3 +1,130 @@
+// 모션 감소를 요청한 경우 SECTION 01 배경 영상의 자동 재생을 중지합니다.
+const heroVideo = document.querySelector(".hero-video");
+const heroMotionPreference = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+);
+
+if (heroVideo && heroMotionPreference.matches) {
+    heroVideo.pause();
+    heroVideo.removeAttribute("autoplay");
+}
+
+heroMotionPreference.addEventListener("change", (event) => {
+    if (!heroVideo) {
+        return;
+    }
+
+    if (event.matches) {
+        heroVideo.pause();
+        heroVideo.removeAttribute("autoplay");
+        return;
+    }
+
+    heroVideo.setAttribute("autoplay", "");
+    heroVideo.play().catch((error) => {
+        if (error.name !== "AbortError") {
+            console.error("히어로 배경 영상 재생에 실패했습니다.", error);
+        }
+    });
+});
+
+// EXPERIENCE 전체 화면 컨셉 슬라이드
+const experienceGallery = document.querySelector("#experience-gallery");
+const experienceGalleryTrigger = document.querySelector(".immersive-scroll");
+
+if (experienceGallery && experienceGalleryTrigger) {
+    const experienceSlides = [
+        ...experienceGallery.querySelectorAll(".experience-gallery-slide")
+    ];
+    const experienceTrack = experienceGallery.querySelector(
+        ".experience-gallery-track"
+    );
+    const closeGalleryButton = experienceGallery.querySelector(
+        ".experience-gallery-close"
+    );
+    let activeSlide = 0;
+
+    const updateExperienceSlide = (moveFocus = false) => {
+        experienceSlides.forEach((slide, index) => {
+            slide.setAttribute("aria-hidden", String(index !== activeSlide));
+            slide.querySelector(".experience-gallery-logo").setAttribute(
+                "tabindex",
+                index === activeSlide ? "0" : "-1"
+            );
+        });
+        experienceTrack.style.transform =
+            `translateX(-${activeSlide * 100}%)`;
+
+        if (moveFocus) {
+            experienceSlides[activeSlide]
+                .querySelector(".experience-gallery-logo")
+                .focus({ preventScroll: true });
+        }
+    };
+
+    const advanceExperienceSlide = () => {
+        activeSlide = (activeSlide + 1) % experienceSlides.length;
+        updateExperienceSlide(true);
+    };
+
+    const openExperienceGallery = () => {
+        activeSlide = 0;
+        updateExperienceSlide();
+        experienceGallery.hidden = false;
+        experienceGallery.setAttribute("aria-hidden", "false");
+        document.body.classList.add("experience-gallery-open");
+        closeGalleryButton.focus();
+    };
+
+    const closeExperienceGallery = () => {
+        experienceGallery.hidden = true;
+        experienceGallery.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("experience-gallery-open");
+        experienceGalleryTrigger.focus();
+    };
+
+    experienceGalleryTrigger.addEventListener(
+        "click",
+        openExperienceGallery
+    );
+    closeGalleryButton.addEventListener("click", closeExperienceGallery);
+
+    experienceSlides.forEach((slide) => {
+        const logoButton = slide.querySelector(".experience-gallery-logo");
+        logoButton.addEventListener("click", advanceExperienceSlide);
+        logoButton.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                advanceExperienceSlide();
+            }
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (experienceGallery.hidden) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeExperienceGallery();
+        } else if (event.key === "ArrowRight") {
+            advanceExperienceSlide();
+        } else if (event.key === "Tab") {
+            const activeLogo = experienceSlides[activeSlide].querySelector(
+                ".experience-gallery-logo"
+            );
+
+            if (event.shiftKey && document.activeElement === closeGalleryButton) {
+                event.preventDefault();
+                activeLogo.focus();
+            } else if (!event.shiftKey && document.activeElement === activeLogo) {
+                event.preventDefault();
+                closeGalleryButton.focus();
+            }
+        }
+    });
+}
+
 const languageToggle = document.querySelector(".language-toggle");
 const languageMenu = document.querySelector("#language-menu");
 const languageCurrent = document.querySelector(".language-current");
@@ -119,6 +246,7 @@ const worldsSection = document.querySelector(".worlds-section");
 const conceptStage = worldsSection?.querySelector(".concept-stage");
 const conceptDescription = worldsSection?.querySelector(".worlds-description");
 const firstConceptItem = worldsSection?.querySelector(".concept-item");
+const conceptList = worldsSection?.querySelector(".concept-list");
 const worldsImageLayer = worldsSection?.querySelector(".worlds-image-layer");
 const conceptButtons = worldsSection?.querySelectorAll(".concept-button");
 
@@ -127,11 +255,11 @@ if (
     conceptStage &&
     conceptDescription &&
     firstConceptItem &&
+    conceptList &&
     worldsImageLayer &&
     conceptButtons
 ) {
     let worldsScrollFrame = 0;
-    let conceptResetTimer = 0;
 
     worldsImageLayer.addEventListener("transitionend", (event) => {
         if (
@@ -144,8 +272,6 @@ if (
     });
 
     const resetConceptImage = () => {
-        window.clearTimeout(conceptResetTimer);
-        conceptResetTimer = 0;
         worldsImageLayer.classList.remove("is-visible");
         worldsSection.classList.remove("has-selected-concept");
 
@@ -192,17 +318,9 @@ if (
     window.addEventListener("resize", updateWorldsScroll);
     updateWorldsScroll();
 
+    conceptList.addEventListener("pointerleave", resetConceptImage);
+
     conceptButtons.forEach((button) => {
-        button.addEventListener("pointerenter", () => {
-            window.clearTimeout(conceptResetTimer);
-            conceptResetTimer = 0;
-        });
-
-        button.addEventListener("pointerleave", () => {
-            window.clearTimeout(conceptResetTimer);
-            conceptResetTimer = window.setTimeout(resetConceptImage, 3000);
-        });
-
         button.addEventListener("click", () => {
             const concept = button.dataset.concept;
 
@@ -215,8 +333,6 @@ if (
                 document.baseURI
             ).href;
 
-            window.clearTimeout(conceptResetTimer);
-            conceptResetTimer = 0;
             worldsImageLayer.style.backgroundImage =
                 `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${imageUrl}")`;
             worldsSection.classList.add("has-selected-concept");
