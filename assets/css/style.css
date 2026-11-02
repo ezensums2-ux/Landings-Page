@@ -892,9 +892,14 @@ body.site-menu-open {
     }
 
     .season .season-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         flex: 1 1 140px;
         padding: 14px;
         border-radius: 14px;
+        text-align: center;
     }
 
     .season .season-detail dd {
