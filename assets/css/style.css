@@ -3,16 +3,16 @@
 @import url('commons.css');
 
 /* SECTION 01 ~ FOOTER: 기존 섹션별 스타일과 반응형 값 유지 */
-.header{
+.header {
     position: sticky;
     top: 0;
     z-index: 1001;
-    height: 100px;
-    background: #000;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.8);
     padding: 0;
 }
 
-.header-inner{
+.header-inner {
     display: flex;
     align-items: center;
     width: calc(100% - 40px);
@@ -20,6 +20,7 @@
     height: 100%;
     margin: 0 auto;
 }
+
 .s-logo-img a {
     background: transparent;
     border: none;
@@ -31,15 +32,15 @@
     display: block;
 }
 
-.header-buttons{
+.header-buttons {
     display: flex;
     align-items: center;
     margin-left: auto;
     gap: 20px;
 }
-    
-.ss-but{
-    background: linear-gradient(90deg,rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
+
+.ss-but {
+    background: linear-gradient(90deg, rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -68,6 +69,7 @@ html {
 
 /* 모바일 반응형 */
 @media (max-width: 768px) {
+
     #season,
     #about,
     #worlds,
@@ -85,7 +87,7 @@ html {
     }
 }
 
-.icon-button{
+.icon-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,16 +99,16 @@ html {
     height: 25px;
 }
 
-.icon-button img{
+.icon-button img {
     display: block;
-   
+
 }
 
-.site-menu[hidden]{
+.site-menu[hidden] {
     display: none;
 }
 
-.site-menu{
+.site-menu {
     position: fixed;
     inset: 0;
     z-index: 1000;
@@ -123,19 +125,19 @@ html {
     overflow-y: auto;
 }
 
-.site-menu-header{
+.site-menu-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.site-menu-brand{
+.site-menu-brand {
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.28em;
 }
 
-.site-menu-close{
+.site-menu-close {
     position: relative;
     width: 40px;
     height: 40px;
@@ -146,7 +148,7 @@ html {
     cursor: pointer;
 }
 
-.site-menu-close span{
+.site-menu-close span {
     position: absolute;
     top: 19px;
     left: 10px;
@@ -155,22 +157,22 @@ html {
     background: #f5f5f5;
 }
 
-.site-menu-close span:first-child{
+.site-menu-close span:first-child {
     transform: rotate(45deg);
 }
 
-.site-menu-close span:last-child{
+.site-menu-close span:last-child {
     transform: rotate(-45deg);
 }
 
-.site-menu-nav{
+.site-menu-nav {
     display: flex;
     flex-direction: column;
     width: min(100%, 1000px);
     margin: 40px auto;
 }
 
-.site-menu-link{
+.site-menu-link {
     display: flex;
     align-items: baseline;
     gap: clamp(16px, 4vw, 56px);
@@ -186,12 +188,12 @@ html {
 }
 
 .site-menu-link:hover,
-.site-menu-link:focus-visible{
+.site-menu-link:focus-visible {
     padding-left: 12px;
     color: #c99cff;
 }
 
-.site-menu-footer{
+.site-menu-footer {
     margin: 0;
     color: #a8a8a8;
     font-size: 11px;
@@ -199,15 +201,15 @@ html {
     text-align: center;
 }
 
-body.site-menu-open{
+body.site-menu-open {
     overflow: hidden;
 }
 
-.language-selector{
+.language-selector {
     position: relative;
 }
 
-.language-menu{
+.language-menu {
     position: absolute;
     top: calc(100% + 16px);
     right: 0;
@@ -221,23 +223,23 @@ body.site-menu-open{
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-.language-menu[hidden]{
+.language-menu[hidden] {
     display: none;
 }
 
-.language-menu-label{
+.language-menu-label {
     margin: 0 0 6px;
     color: #a8a8a8;
     font-size: 12px;
 }
 
-.language-current{
+.language-current {
     margin: 0 0 12px;
     font-size: 16px;
     font-weight: 600;
 }
 
-.language-options{
+.language-options {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -245,7 +247,7 @@ body.site-menu-open{
     border-top: 1px solid #3a3a3a;
 }
 
-.language-option{
+.language-option {
     width: 100%;
     padding: 8px;
     color: #f5f5f5;
@@ -258,33 +260,36 @@ body.site-menu-open{
 
 .language-option:hover,
 .language-option:focus-visible,
-.language-option[aria-pressed="true"]{
+.language-option[aria-pressed="true"] {
     background: #303030;
 }
 
-@media(max-width:768px){
-    .site-menu{
+@media(max-width:768px) {
+    .site-menu {
         padding: 20px 24px;
     }
 
-    .site-menu-nav{
+    .site-menu-nav {
         margin: 28px auto;
     }
 
-    .site-menu-link{
+    .site-menu-link {
         padding: 14px 0;
     }
 
-    .header{
+    .header {
         height: 72px;
     }
-    .s-logo-img svg{
+
+    .s-logo-img svg {
         width: 90px;
     }
-    .header-buttons{
+
+    .header-buttons {
         gap: 8px;
     }
-    .button1{
+
+    .button1 {
         width: auto;
         padding: 8px 12px;
     }
@@ -293,15 +298,16 @@ body.site-menu-open{
 
 /* section01 시작 */
 
-.hero-bg{
+.hero-bg {
     background: #000 url('../images/hero-bg.jpg') center / cover no-repeat;
     width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
 }
+
 /* SECTION 01 배경 영상: 콘텐츠 크기와 위치에 영향을 주지 않는 배경 레이어 */
-.hero-bg .hero-video{
+.hero-bg .hero-video {
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -311,34 +317,39 @@ body.site-menu-open{
     object-fit: cover;
     object-position: center;
 }
-.black-bg{
+
+.black-bg {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 100vh;
     background: transparent;
 }
+
 /* 기존 오버레이 요소는 유지하되 영상의 색감을 덮지 않도록 투명 처리 */
-.hero-bg .black-bg{
+.hero-bg .black-bg {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: transparent;
 }
-.hero-title{
+
+.hero-title {
     color: #fff;
 }
-.kv-title{
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  width: 100%;
+
+.kv-title {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100%;
 }
+
 /* 제목과 스크롤 안내를 담는 영역 */
-.hero-bg .kv-title{
+.hero-bg .kv-title {
     position: relative;
     z-index: 2;
 
@@ -349,45 +360,53 @@ body.site-menu-open{
 
     box-sizing: border-box;
     width: 100%;
-    min-height: 100vh;  /* svh 미지원 브라우저용 */
-    min-height: 100svh; /* 모바일 주소창이 보일 때의 화면 높이 기준 */
+    min-height: 100vh;
+    /* svh 미지원 브라우저용 */
+    min-height: 100svh;
+    /* 모바일 주소창이 보일 때의 화면 높이 기준 */
 
     margin: 0 auto;
     padding: 80px 24px 24px;
 }
-.d-flex{
+
+.d-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.hero-bg .d-flex{
+
+.hero-bg .d-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
 }
-.hero-bg .logo-img{
+
+.hero-bg .logo-img {
     width: 100%;
     max-width: 600px;
 }
-.hero-bg .logo-img svg{
+
+.hero-bg .logo-img svg {
     display: block;
     width: 100%;
     height: auto;
 }
-.hero-bg .hero-title{
+
+.hero-bg .hero-title {
     width: 100%;
     color: #fff;
     text-align: center;
 }
-.herp-bg .subtitle{
+
+.herp-bg .subtitle {
     margin: 0;
     font-size: clamp(18px, 3vw, 40px);
     line-height: 1.3;
     overflow-wrap: break-word;
 }
 
-.scroll-text{
+.scroll-text {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -395,52 +414,60 @@ body.site-menu-open{
 
 }
 
-.scroll-text p{
+.scroll-text p {
     margin-right: 10px;
     font-size: 20px;
     font-weight: 400;
     color: #fff;
 }
-.hero-bg .scroll-text{
+
+.hero-bg .scroll-text {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.hero-bg .scroll-text p{
+
+.hero-bg .scroll-text p {
     margin: 0;
     font-size: clamp(12px, 1.5vw, 20px);
     font-weight: 400;
     color: #fff;
 }
-.hero-bg .scroll-text svg{
+
+.hero-bg .scroll-text svg {
     display: block;
     width: 24px;
     height: auto;
     flex-shrink: 0;
 }
+
 /* 모바일 */
 @media (max-width: 768px) {
-    .hero-bg .kv-title{
+    .hero-bg .kv-title {
         padding: 48px 20px 20px;
     }
-    .hero-bg .d-flex{
+
+    .hero-bg .d-flex {
         gap: 16px;
     }
+
     .hero-bg .logo-img {
         max-width: 320px;
     }
-    .hero-bg .scroll-text svg{
+
+    .hero-bg .scroll-text svg {
         width: 20px;
     }
 }
 
 /* 모션 감소 설정에서는 자동 재생 대신 기존 히어로 이미지를 표시 */
 @media (prefers-reduced-motion: reduce) {
-    .hero-bg{
+    .hero-bg {
         background-image: url('../images/hero-bg.jpg');
     }
-    .hero-bg .hero-video{
+
+    .hero-bg .hero-video {
         display: none;
     }
 }
@@ -452,388 +479,465 @@ body.site-menu-open{
 /* section02 시작 */
 
 /* 섹션 전체 배경 */
-.season{
+.season {
     position: relative;
     isolation: isolate;
     padding: 100px 0;
     margin-top: 100px;
     color: #fff;
-    background: #111 url('../images/spring-bg.jpg') center / cover no-repeat;
+    background-color: #0b0b0e;
+    overflow: hidden;
 }
-/* 배경을 어둡게 처리 */
-.season::before{
+
+/* 배경 이미지 동적 전환 레이어 (experience-card 슬라이드와 동기화) */
+.season-backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.season-backdrop-item {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.season-backdrop-item.is-active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+}
+
+/* 배경을 어둡게 처리하는 그라데이션 오버레이 */
+.season::before {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
-    background: linear-gradient(90deg,rgba(4, 4, 7, 1) 0%, rgba(4, 4, 7, 0) 50%, rgba(4, 4, 7, 0.7) 100%),
-    linear-gradient(90deg,rgba(4, 4, 7, 0.95) 0%, rgba(4, 4, 7, 0.6) 50%, rgba(4, 4, 7, 0) 100%);
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(4, 4, 7, 1) 0%, rgba(4, 4, 7, 0) 50%, rgba(4, 4, 7, 0.7) 100%),
+        linear-gradient(90deg, rgba(4, 4, 7, 0.95) 0%, rgba(4, 4, 7, 0.6) 50%, rgba(4, 4, 7, 0) 100%);
+    pointer-events: none;
 }
+
 /* 섹션 내부 기본 설정 */
 .season,
 .season * {
     box-sizing: border-box;
 }
+
 .season h2,
 .season h3,
 .season p,
 .season dl,
 .season dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* 왼쪽 소개 + 오른쪽 카드 */
 .season .season-inner {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: stretch;
-  gap: clamp(32px, 5vw, 100px);
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: clamp(32px, 5vw, 100px);
 
-  width: calc(100% - 48px);
-  max-width: 1680px;
-  margin: 0 auto;
+    width: calc(100% - 48px);
+    max-width: 1680px;
+    margin: 0 auto;
 }
 
 /* 왼쪽 소개 영역 */
 .season .season-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 50px;
-  min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    min-width: 0;
 }
 
 /* 상단 시즌 배지 */
 .season .season-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border: 1px solid rgba(244, 114, 182, 0.30);
-  border-radius: 999px;
-  background: rgba(236, 72, 153, 0.20);
-  color: #F9A8D4;
-  font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid rgba(244, 114, 182, 0.30);
+    border-radius: 999px;
+    background: rgba(236, 72, 153, 0.20);
+    color: #F9A8D4;
+    font-size: 14px;
 }
 
 /* 배지 앞 작은 원 */
 .season .season-badge::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  border-radius: 100%;
-  background: #F472B6;
+    content: "";
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    background: #F472B6;
 }
 
 .season .season-label {
-  margin-top: 20px;
-  color: #F472B6;
-  font-size: 16px;
+    margin-top: 20px;
+    color: #F472B6;
+    font-size: 16px;
 }
 
 /* 메인 제목 */
 .season .season-title {
-  margin-top: 20px;
-  font-size: 40px;
-  font-weight: 600;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
 /* 영문 제목은 다음 줄에 배치 */
 .season .season-title span {
-  display: inline-block;
-  background: linear-gradient(90deg,rgba(249, 168, 212, 1) 0%, rgba(233, 213, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(249, 168, 212, 1) 0%, rgba(233, 213, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 .season .season-subtitle {
-  margin-top: 22px;
-  font-size: 20px;
-  line-height: 1.6;
-  word-break: keep-all;
+    margin-top: 22px;
+    font-size: 20px;
+    line-height: 1.6;
+    word-break: keep-all;
 }
 
 .season .season-description {
-  margin-top: 20px;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.7;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
-.season .season-description p + p {
-  margin-top: 20px;
+.season .season-description p+p {
+    margin-top: 20px;
 }
 
 /* 운영 정보 + 예매 버튼 */
 .season .season-bottom {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .season .season-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .season .season-detail {
-  padding: 20px 30px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(0, 0, 0, 0.20);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    padding: 20px 30px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.20);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .season .season-detail dt {
-  color: #fff;
-  font-size: 16px;
+    color: #fff;
+    font-size: 16px;
 }
 
 .season .season-detail dd {
-  font-size: 20px;
-  font-weight: 600;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .season .season-detail:first-child dd {
-  color: #E977B3;
+    color: #E977B3;
 }
 
 /* 예매 링크 */
 .season .season-booking {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 20px 30px;
-  border-radius: 20px;
-  background: linear-gradient(90deg,rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: filter 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 20px 30px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(236, 72, 153, 1) 0%, rgba(147, 51, 234, 1) 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: filter 0.2s;
 }
 
 .season .season-booking:hover {
-  filter: brightness(1.12);
+    filter: brightness(1.12);
 }
 
 .season .season-booking:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
+    outline: 2px solid #fff;
+    outline-offset: 4px;
 }
 
 /* 오른쪽 반투명 카드 */
 .season .experience-card {
-  min-width: 0;
-  padding: 40px 30px;
-  border-radius: 20px;
-  background: rgba(217, 217, 217, 0.20);
+    min-width: 0;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: rgba(217, 217, 217, 0.20);
 }
 
-/* 카드 이미지 */
+/* 카드 이미지 & Swiper */
 .season .experience-image {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 1.9 / 1;
-  border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.9 / 1;
+    border-radius: 20px;
 }
 
-.season .experience-slides,
-.season .experience-slides img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.season .experience-card-swiper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.season .experience-slides img {
-  display: block;
-  object-fit: cover;
-  opacity: 0;
-  animation: experience-slide-show 12s linear infinite;
+.season .experience-card-swiper .swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.season .experience-slides img:nth-child(1) {
-  animation-delay: 0s;
+.season .experience-card-swiper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
 }
 
-.season .experience-slides img:nth-child(2) {
-  animation-delay: -3s;
+/* prev, next 버튼 (색상: 흰색) */
+.season .experience-card-prev,
+.season .experience-card-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    margin-top: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    color: #ffffff !important;
+    --swiper-navigation-color: #ffffff;
+    --swiper-navigation-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
-.season .experience-slides img:nth-child(3) {
-  animation-delay: -6s;
+.season .experience-card-prev:hover,
+.season .experience-card-next:hover {
+    background: rgba(0, 0, 0, 0.75);
+    border-color: #ffffff;
+    transform: translateY(-50%) scale(1.08);
 }
 
-.season .experience-slides img:nth-child(4) {
-  animation-delay: -9s;
+.season .experience-card-prev {
+    left: 14px;
+    right: auto;
 }
 
-@keyframes experience-slide-show {
-  5%,
-  20% {
-    opacity: 1;
-  }
-
-  0%,
-  25%,
-  100% {
-    opacity: 0;
-  }
+.season .experience-card-next {
+    right: 14px;
+    left: auto;
 }
 
-.season .experience-image:hover .experience-slides img,
-.season .experience-image:focus-within .experience-slides img {
-  animation-play-state: paused;
+.season .experience-card-prev:focus-visible,
+.season .experience-card-next:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+
+    .season .experience-card-prev,
+    .season .experience-card-next {
+        width: 34px;
+        height: 34px;
+        --swiper-navigation-size: 14px;
+    }
+
+    .season .experience-card-prev {
+        left: 8px;
+    }
+
+    .season .experience-card-next {
+        right: 8px;
+    }
 }
 
 /* 사진 우측 상단 라벨 */
 .season .experience-label {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  max-width: calc(100% - 24px);
-  padding: 5px 10px;
-  border-radius: 999px;
-  background:rgba(0, 0, 0, 0.30);
-  color: #F9A8D4;
-  font-size: 13px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    max-width: calc(100% - 24px);
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.30);
+    color: #F9A8D4;
+    font-size: 13px;
+    z-index: 10;
 }
 
 /* 카드 제목과 설명 */
 .season .experience-content {
-  padding: 28px 0 20px;
+    padding: 28px 0 20px;
 }
 
 .season .experience-title {
-  font-size: clamp(18px, 1.4vw, 20px);
-  font-weight: 600;
-  line-height: 3;
+    font-size: clamp(18px, 1.4vw, 20px);
+    font-weight: 600;
+    line-height: 3;
 }
 
 .season .experience-description {
-  margin-top: 12px;
-  color: #fff;
-  font-size: 16px;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+    margin-top: 12px;
+    color: #fff;
+    font-size: 16px;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
 /* 카드 하단 */
 .season .experience-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  color:rgba(255, 255, 255, 0.50);
-  font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 14px;
 }
 
 .season .experience-footer p:last-child {
-  color: #ff79bc;
+    color: #ff79bc;
 }
 
 /* 태블릿: 위아래 배치 */
 @media (max-width: 1024px) {
-  .season {
-    padding: 72px 0;
-  }
+    .season {
+        padding: 72px 0;
+    }
 
-  .season .season-inner {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+    .season .season-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
-  .season .season-info {
-    gap: 32px;
-  }
+    .season .season-info {
+        gap: 32px;
+    }
 }
 
 /* 모바일 */
 @media (max-width: 600px) {
-  .season {
-    padding: 48px 0;
-  }
+    .season {
+        padding: 48px 0;
+    }
 
-  .season .season-inner {
-    width: calc(100% - 40px);
-    gap: 32px;
-  }
+    .season .season-inner {
+        width: calc(100% - 40px);
+        gap: 32px;
+    }
 
-  .season .season-title {
-    font-size: 26px;
-  }
+    .season .season-title {
+        font-size: 26px;
+    }
 
-  .season .season-description {
-    font-size: 13px;
-  }
+    .season .season-description {
+        font-size: 13px;
+    }
 
-  .season .season-bottom {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
+    .season .season-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
 
-  .season .season-details {
-    gap: 12px;
-  }
+    .season .season-details {
+        gap: 12px;
+    }
 
-  .season .season-detail {
-    flex: 1 1 140px;
-    padding: 14px;
-    border-radius: 14px;
-  }
+    .season .season-detail {
+        flex: 1 1 140px;
+        padding: 14px;
+        border-radius: 14px;
+    }
 
-  .season .season-detail dd {
-    font-size: 14px;
-  }
+    .season .season-detail dd {
+        font-size: 14px;
+    }
 
-  .season .season-booking {
-    width: 100%;
-    border-radius: 14px;
-  }
+    .season .season-booking {
+        width: 100%;
+        border-radius: 14px;
+    }
 
-  .season .experience-card {
-    padding: 20px;
-    border-radius: 16px;
-  }
+    .season .experience-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
 
-  .season .experience-content {
-    padding-top: 20px;
-  }
+    .season .experience-content {
+        padding-top: 20px;
+    }
 
-  .season .experience-description {
-    font-size: 13px;
-  }
+    .season .experience-description {
+        font-size: 13px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .season .experience-slides img {
-    animation: none;
-  }
+    .season-backdrop-item {
+        transition: opacity 0.2s ease !important;
+        transform: none !important;
+    }
 
-  .season .experience-slides img:first-child {
-    opacity: 1;
-  }
+    .season .experience-slides img {
+        animation: none;
+    }
 
-  .season .experience-slides img:not(:first-child) {
-    display: none;
-  }
+    .season .experience-slides img:first-child {
+        opacity: 1;
+    }
+
+    .season .experience-slides img:not(:first-child) {
+        display: none;
+    }
 }
 
 /* section03 시작 */
@@ -843,18 +947,16 @@ body.site-menu-open{
     --about-header-height: 100px;
     margin-top: 100px;
     width: 100%;
-    height: calc(700vh - var(--about-header-height));
-    min-height: 0;
+    height: auto;
     display: block;
     background: none;
 }
 
 .about-sticky {
-    position: sticky;
-    top: var(--about-header-height);
+    position: relative;
     width: 100%;
     height: calc(100vh - var(--about-header-height));
-    min-height: 520px;
+    min-height: 580px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -864,12 +966,14 @@ body.site-menu-open{
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
 .about-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.60));
+    background: rgba(0, 0, 0, 0.60);
     pointer-events: none;
 }
+
 .about-inner {
     position: relative;
     z-index: 2;
@@ -879,50 +983,12 @@ body.site-menu-open{
     text-align: center;
     color: #ffffff;
 }
+
+/* GSAP ScrollTrigger 애니메이션을 위한 기본 스타일 */
 .about-reveal {
-    display: none;
     opacity: 0;
-    transform: translateY(44px);
-}
-.about-reveal.is-visible {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    animation: about-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.about-symbol.about-reveal.is-visible {
-    display: flex;
-}
-
-@keyframes about-rise {
-    from {
-        opacity: 0;
-        transform: translateY(44px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.about-card[data-about-step="4"].is-visible {
-    animation-delay: 0ms;
-}
-
-.about-card[data-about-step="5"].is-visible {
-    animation-delay: 180ms;
-}
-
-.about-card[data-about-step="6"].is-visible {
-    animation-delay: 360ms;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about-reveal.is-visible {
-        animation: none;
-    }
+    transform: translateY(35px);
+    will-change: opacity, transform;
 }
 
 .about-symbol {
@@ -933,6 +999,7 @@ body.site-menu-open{
     align-items: center;
     justify-content: center;
 }
+
 .about-label {
     margin: 0 0 30px;
     font-size: 20px;
@@ -940,6 +1007,7 @@ body.site-menu-open{
     letter-spacing: 0.02em;
     color: #A8A8A8;
 }
+
 .about-title {
     margin: 0 0 10px 0;
     font-size: clamp(32px, 2.6vw, 40px);
@@ -948,6 +1016,7 @@ body.site-menu-open{
     letter-spacing: -0.04em;
     color: #CECECE;
 }
+
 .about-description {
     max-width: 760px;
     margin: 30px auto 0;
@@ -956,13 +1025,15 @@ body.site-menu-open{
     line-height: 1.75;
     color: #F5F5F5;
 }
+
 .about-description p {
     margin: 0 0 10px 0;
 }
 
-.about-description p + p {
+.about-description p+p {
     margin-top: 30px;
 }
+
 .about-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -970,6 +1041,7 @@ body.site-menu-open{
     max-width: 1180px;
     margin: 50px auto 0;
 }
+
 .about-card {
     min-height: 150px;
     padding: 30px;
@@ -978,6 +1050,7 @@ body.site-menu-open{
     border: 1px solid #A8A8A8;
     border-radius: 10px;
 }
+
 .about-card:hover {
     transform: translateY(-6px);
 
@@ -985,6 +1058,7 @@ body.site-menu-open{
 
     border-color: rgba(255, 255, 255, 0.75);
 }
+
 .card-number {
     display: block;
     font-size: 28px;
@@ -993,12 +1067,14 @@ body.site-menu-open{
     margin: 0 0 10px;
 
 }
+
 .card-title {
     font-size: 20px;
     letter-spacing: -0.01em;
     color: #ffffff;
     margin: 0 0 10px;
 }
+
 .card-text {
     margin: 0;
     font-size: 16px;
@@ -1006,6 +1082,7 @@ body.site-menu-open{
     line-height: 1.6;
     color: #CECECE;
 }
+
 /* =========================================
    Tablet
    1024px 이하
@@ -1062,45 +1139,6 @@ body.site-menu-open{
 
     .about-inner {
         width: calc(100% - 40px);
-    }
-
-    .about-reveal.is-visible:not(.is-current) {
-        display: none;
-    }
-
-    .about-section[data-stage="6"] .about-reveal.is-visible:not(.is-current) {
-        display: block;
-    }
-
-    .about-section[data-stage="6"] .about-sticky {
-        align-items: flex-start;
-        overflow-y: auto;
-    }
-
-    .about-section[data-stage="6"] .about-inner {
-        padding: 8px 0;
-    }
-
-    .about-section[data-stage="6"] .about-description {
-        margin-top: 12px;
-        line-height: 1.55;
-    }
-
-    .about-section[data-stage="6"] .about-description p + p {
-        margin-top: 8px;
-    }
-
-    .about-section[data-stage="6"] .about-cards {
-        margin-top: 12px;
-        gap: 6px;
-    }
-
-    .about-section[data-stage="6"] .about-card {
-        padding: 8px 10px;
-    }
-
-    .about-section[data-stage="6"] .card-number {
-        margin-bottom: 4px;
     }
 
     .about-symbol {
@@ -1205,7 +1243,7 @@ body.site-menu-open{
         text-align: left;
     }
 
-    .about-description p + p {
+    .about-description p+p {
         margin-top: 20px;
     }
 
@@ -1235,22 +1273,20 @@ body.site-menu-open{
         font-size: 11px;
     }
 }
+
 /* section03 끝 */
 
 /* section04 시작 */
 
 .worlds-section {
     --worlds-image: url("../images/worlds-bg.jpg");
-    --worlds-height: 100vh;
-    --worlds-height: 100svh;
-    --worlds-intro-height: 830px;
-    --worlds-stage-height: max(var(--worlds-intro-height), var(--worlds-height));
+    --worlds-header-height: 80px;
 
     position: relative;
     isolation: isolate;
     width: 100%;
     margin: 100px 0;
-    height: calc(var(--worlds-stage-height) * 2);
+    height: auto;
     color: #fff;
     background: #000;
 }
@@ -1261,10 +1297,10 @@ body.site-menu-open{
 }
 
 .worlds-section .worlds-stage {
-    position: sticky;
-    top: 0;
+    position: relative;
     width: 100%;
-    height: var(--worlds-stage-height);
+    height: calc(100vh - var(--worlds-header-height));
+    min-height: 680px;
     overflow: hidden;
 }
 
@@ -1312,23 +1348,25 @@ body.site-menu-open{
     max-width: 1712px;
     height: 100%;
     margin: 0 auto;
-    padding: 100px 0 60px;
+    padding: 70px 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 64px;
+    gap: 40px;
+    pointer-events: none;
 }
 
 .worlds-section .worlds-content {
     width: 520px;
     max-width: 100%;
+    pointer-events: auto;
 }
 
 .worlds-section .worlds-label-wrap {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
 }
 
 .worlds-section .worlds-label {
@@ -1350,19 +1388,19 @@ body.site-menu-open{
 
 .worlds-section .worlds-title {
     margin: 0;
-    font-size: 56px;
+    font-size: clamp(34px, 3.2vw, 52px);
     font-weight: 700;
-    line-height: 1.18;
+    line-height: 1.15;
     letter-spacing: -0.03em;
     overflow-wrap: anywhere;
     color: #fff;
 }
 
 .worlds-section .worlds-subtitle {
-    margin: 62px 0 20px;
-    font-size: 28px;
+    margin: 24px 0 16px;
+    font-size: clamp(18px, 1.8vw, 26px);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.35;
     letter-spacing: -0.03em;
     color: #fff;
 }
@@ -1387,14 +1425,8 @@ body.site-menu-open{
     word-break: keep-all;
     overflow-wrap: anywhere;
     color: #fff;
-    transition: opacity 250ms ease, transform 250ms ease;
-}
-
-.worlds-section.concepts-over-description .worlds-description {
-    opacity: 0;
-    transform: translateY(-8px);
-    visibility: hidden;
-    pointer-events: none;
+    pointer-events: auto;
+    will-change: opacity, transform;
 }
 
 .worlds-section .worlds-description strong {
@@ -1405,16 +1437,18 @@ body.site-menu-open{
 /* 두 번째 영역 : 모든 컨셉 목록 */
 .worlds-section .concept-stage {
     position: absolute;
-    inset: 0;
-    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
     width: calc(100% - 160px);
     max-width: 1712px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding-bottom: clamp(20px, 4vh, 44px);
     display: flex;
     align-items: flex-end;
-    transform: translateY(var(--concept-scroll-shift, 50vh));
-    will-change: transform;
+    pointer-events: auto;
+    will-change: opacity, transform;
 }
 
 .worlds-section .concept-list {
@@ -1426,16 +1460,17 @@ body.site-menu-open{
 
 .worlds-section .concept-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    will-change: opacity, transform;
 }
 
 .worlds-section .concept-button {
     appearance: none;
     width: 100%;
-    min-height: 88px;
+    min-height: 64px;
     margin: 0;
-    padding: 20px 8px;
+    padding: 13px 8px;
     display: grid;
-    grid-template-columns: 56px minmax(150px, 240px) minmax(0, 1fr) 32px;
+    grid-template-columns: 56px minmax(140px, 220px) minmax(0, 1fr) 32px;
     align-items: center;
     gap: 20px;
     border: 0;
@@ -1454,35 +1489,35 @@ body.site-menu-open{
 }
 
 .worlds-section .concept-name {
-    font-size: clamp(22px, 2vw, 30px);
+    font-size: clamp(20px, 1.8vw, 26px);
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -0.02em;
     opacity: 0.65;
+    transition: font-size 0.25s ease, opacity 0.25s ease, color 0.25s ease;
 }
 
 .worlds-section .concept-description {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 15px;
+    line-height: 1.45;
     word-break: keep-all;
     overflow-wrap: anywhere;
 }
 
 .worlds-section .concept-arrow {
     display: block;
-    width: 28px;
-    height: 31px;
+    width: 24px;
+    height: 27px;
     justify-self: end;
 }
 
-/* SVG의 path에는 fill="currentColor"를 사용하세요. */
 .worlds-section .concept-button.is-active {
     color: #b3b3b3;
 }
 
 .worlds-section .concept-button.is-active .concept-name {
     color: #fff;
-    font-size: clamp(34px, 3.2vw, 46px);
+    font-size: clamp(28px, 2.5vw, 38px);
     font-weight: 800;
     letter-spacing: 0.03em;
     opacity: 1;
@@ -1496,8 +1531,9 @@ body.site-menu-open{
 
 /* 태블릿 */
 @media (max-width: 1024px) {
-    .worlds-section {
-        --worlds-intro-height: 720px;
+    .worlds-section .worlds-stage {
+        height: calc(100vh - 72px);
+        min-height: 640px;
     }
 
     .worlds-section .worlds-inner,
@@ -1505,59 +1541,76 @@ body.site-menu-open{
         width: calc(100% - 80px);
     }
 
-    .worlds-section .worlds-inner { padding: 80px 0 55px; }
-    .worlds-section .worlds-content { width: 460px; }
-    .worlds-section .worlds-title { font-size: 42px; }
-    .worlds-section .worlds-subtitle { margin-top: 50px; font-size: 20px; }
-    .worlds-section .worlds-label { font-size: 14px; }
-    .worlds-section .worlds-label-line { max-width: 180px; }
-    .worlds-section .worlds-description { font-size: 14px; }
+    .worlds-section .worlds-inner {
+        padding: 55px 0 40px;
+    }
+
+    .worlds-section .worlds-content {
+        width: 440px;
+    }
+
+    .worlds-section .worlds-title {
+        font-size: 38px;
+    }
+
+    .worlds-section .worlds-subtitle {
+        margin: 20px 0 14px;
+        font-size: 20px;
+    }
 
     .worlds-section .concept-button {
-        grid-template-columns: 40px 160px minmax(0, 1fr) 28px;
+        grid-template-columns: 40px 140px minmax(0, 1fr) 28px;
         gap: 16px;
+        min-height: 58px;
+        padding: 11px 6px;
     }
 }
 
 /* 모바일 */
 @media (max-width: 768px) {
-    .worlds-section {
-        --worlds-intro-height: 680px;
+    .worlds-section .worlds-stage {
+        height: calc(100vh - 72px);
+        min-height: 580px;
     }
 
-    /* 배경은 section 자체가 아닌 ::before에 있습니다. */
-    .worlds-section .worlds-stage::before { background-position: 55% center; }
+    .worlds-section .worlds-stage::before {
+        background-position: 55% center;
+    }
 
     .worlds-section .worlds-inner,
     .worlds-section .concept-stage {
         width: calc(100% - 48px);
     }
 
-    .worlds-section .worlds-inner { padding: 65px 0 45px; }
-    .worlds-section .worlds-content { width: 100%; max-width: 420px; }
-    .worlds-section .worlds-label-wrap { margin-bottom: 22px; }
-    .worlds-section .worlds-label { font-size: 12px; }
-    .worlds-section .worlds-label-line { max-width: 130px; }
-    .worlds-section .worlds-title { font-size: 36px; }
-    .worlds-section .worlds-subtitle { margin-top: 42px; font-size: 18px; }
-    .worlds-section .worlds-content-line { width: 90%; }
-
-    .worlds-section .worlds-description {
-        align-self: flex-start;
-        width: 100%;
-        margin: 0;
-        font-size: 13px;
+    .worlds-section .worlds-inner {
+        padding: 40px 0 25px;
     }
 
-    .worlds-section .concept-stage { padding: 40px 0; }
+    .worlds-section .worlds-content {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .worlds-section .worlds-title {
+        font-size: 30px;
+    }
+
+    .worlds-section .worlds-subtitle {
+        margin: 14px 0 10px;
+        font-size: 17px;
+    }
+
+    .worlds-section .concept-stage {
+        padding-bottom: 16px;
+    }
 
     .worlds-section .concept-button {
         grid-template-columns: 28px minmax(0, 1fr) 24px;
         grid-template-rows: auto auto;
         column-gap: 12px;
-        row-gap: 6px;
-        min-height: 96px;
-        padding: 18px 4px;
+        row-gap: 4px;
+        min-height: 52px;
+        padding: 10px 4px;
     }
 
     .worlds-section .concept-number {
@@ -1569,52 +1622,68 @@ body.site-menu-open{
     .worlds-section .concept-name {
         grid-column: 2;
         grid-row: 1;
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .worlds-section .concept-button.is-active .concept-name {
-        font-size: 29px;
+        font-size: 24px;
     }
 
     .worlds-section .concept-description {
         grid-column: 2;
         grid-row: 2;
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .worlds-section .concept-arrow {
         grid-column: 3;
         grid-row: 1 / 3;
-        width: 22px;
+        width: 20px;
         height: auto;
     }
 }
 
 /* 작은 모바일 */
 @media (max-width: 480px) {
-    .worlds-section {
-        --worlds-intro-height: 620px;
+    .worlds-section .worlds-stage {
+        height: calc(100vh - 72px);
+        min-height: 540px;
     }
 
-    .worlds-section .worlds-stage::before { background-position: 58% center; }
+    .worlds-section .worlds-stage::before {
+        background-position: 58% center;
+    }
 
     .worlds-section .worlds-inner,
     .worlds-section .concept-stage {
         width: calc(100% - 32px);
     }
 
-    .worlds-section .worlds-inner { padding: 50px 0 35px; }
-    .worlds-section .worlds-label-wrap { gap: 10px; margin-bottom: 20px; }
-    .worlds-section .worlds-label { font-size: 11px; }
-    .worlds-section .worlds-label-line { max-width: 110px; }
-    .worlds-section .worlds-title { font-size: 31px; line-height: 1.15; }
-    .worlds-section .worlds-subtitle { margin-top: 35px; font-size: 17px; }
-    .worlds-section .worlds-content-line { width: 100%; }
-    .worlds-section .worlds-description { font-size: 12px; line-height: 1.55; }
-    .worlds-section .worlds-description br { display: none; }
-    .worlds-section .concept-name { font-size: 19px; }
-    .worlds-section .concept-button.is-active .concept-name { font-size: 26px; }
-    .worlds-section .concept-description { font-size: 12px; }
+    .worlds-section .worlds-inner {
+        padding: 35px 0 20px;
+    }
+
+    .worlds-section .worlds-title {
+        font-size: 26px;
+        line-height: 1.15;
+    }
+
+    .worlds-section .worlds-subtitle {
+        margin: 12px 0 8px;
+        font-size: 15px;
+    }
+
+    .worlds-section .concept-name {
+        font-size: 17px;
+    }
+
+    .worlds-section .concept-button.is-active .concept-name {
+        font-size: 22px;
+    }
+
+    .worlds-section .concept-description {
+        font-size: 11px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1640,15 +1709,15 @@ body.site-menu-open{
         position: relative;
         inset: auto;
         height: auto;
-        min-height: var(--worlds-stage-height);
+        min-height: auto;
     }
 
     .worlds-section .concept-stage {
         position: relative;
         inset: auto;
-        min-height: var(--worlds-height);
-        transform: none;
-        will-change: auto;
+        min-height: auto;
+        transform: none !important;
+        opacity: 1 !important;
     }
 
     .worlds-section .concept-button,
@@ -1660,7 +1729,6 @@ body.site-menu-open{
         transition: none;
     }
 }
-
 /* SECTION 04 끝 */
 
 
@@ -1689,6 +1757,7 @@ body.site-menu-open{
     overflow: hidden;
     box-sizing: border-box;
 }
+
 .immersive-inner {
     position: relative;
     width: calc(100% - 80px);
@@ -1699,16 +1768,19 @@ body.site-menu-open{
     box-sizing: border-box;
     color: #fff;
 }
+
 .immersive-content {
     width: 100%;
     max-width: 550px;
 }
+
 .immersive-label-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
 }
+
 .immersive-label {
     margin: 0;
     font-size: 20px;
@@ -1717,12 +1789,14 @@ body.site-menu-open{
     white-space: nowrap;
     color: #CECECE;
 }
+
 .immersive-label-line {
     display: block;
     width: 250px;
     height: 1px;
     background: #CECECE;
 }
+
 .immersive-title {
     margin: 0;
     font-size: 56px;
@@ -1731,6 +1805,7 @@ body.site-menu-open{
     letter-spacing: -0.03em;
     color: #fff;
 }
+
 .immersive-subtitle {
     margin: 60px 0 20px;
     font-size: 28px;
@@ -1739,6 +1814,7 @@ body.site-menu-open{
     letter-spacing: -0.03em;
     color: #fff;
 }
+
 .immersive-content-line {
     display: block;
     width: 480px;
@@ -1746,6 +1822,7 @@ body.site-menu-open{
     height: 1px;
     background: #CECECE;
 }
+
 .immersive-scroll {
     position: absolute;
     right: 0;
@@ -1764,24 +1841,28 @@ body.site-menu-open{
     background: transparent;
     font: inherit;
     text-align: left;
-    color: #A8A8A8; 
+    color: #A8A8A8;
     transition: color 200ms ease;
     cursor: pointer;
 }
+
 .immersive-scroll:hover,
 .immersive-scroll:hover span,
 .immersive-scroll:focus-visible,
 .immersive-scroll:focus-visible span {
     color: #fff;
 }
+
 .immersive-scroll:hover svg path,
 .immersive-scroll:focus-visible svg path {
     fill: #fff;
 }
+
 .immersive-scroll:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 8px;
 }
+
 .immersive-scroll span {
     font-size: 20px;
     line-height: 1;
@@ -1808,17 +1889,15 @@ body.site-menu-open{
     color: #fff;
 }
 
-.experience-gallery-track {
-    display: flex;
+/* Swiper 컨테이너 */
+.experience-gallery-swiper {
     width: 100%;
     height: 100%;
-    transform: translateX(0);
-    transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
 }
 
 .experience-gallery-slide {
     position: relative;
-    flex: 0 0 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1827,6 +1906,7 @@ body.site-menu-open{
     margin: 0;
     padding: 90px 80px 110px;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .experience-gallery-slide img {
@@ -1834,20 +1914,78 @@ body.site-menu-open{
     width: min(100%, 1680px);
     max-height: min(830px, calc(100vh - 200px));
     object-fit: contain;
+    pointer-events: none;
+}
+
+/* 하단 고정 앵커 네비게이션 */
+.experience-gallery-nav {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 195px;
+    height: 40px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-gallery-nav-icons {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .experience-gallery-logo {
     position: absolute;
-    bottom: 32px;
-    left: 50%;
-    width: 195px;
-    height: 40px;
-    transform: translateX(-50%);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 250ms ease, visibility 250ms ease;
+    pointer-events: none;
+}
+
+.experience-gallery-logo.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 6개의 개별 앵커 버튼 (원 위치 클릭 영역) */
+.experience-gallery-nav-buttons {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.experience-gallery-anchor {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.experience-gallery-anchor:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
 }
 
 .experience-gallery-close {
     position: absolute;
-    z-index: 1;
+    z-index: 25;
     display: grid;
     place-items: center;
     padding: 0;
@@ -1856,9 +1994,6 @@ body.site-menu-open{
     background: rgba(0, 0, 0, 0.35);
     color: #fff;
     cursor: pointer;
-}
-
-.experience-gallery-close {
     top: 28px;
     right: 32px;
     width: 48px;
@@ -1873,22 +2008,13 @@ body.site-menu-open{
     transform: rotate(45deg);
 }
 
-.experience-gallery-close span + span {
+.experience-gallery-close span+span {
     transform: rotate(-45deg);
 }
 
 .experience-gallery-close:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 4px;
-}
-
-.experience-gallery-logo {
-    cursor: pointer;
-}
-
-.experience-gallery-logo:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 6px;
 }
 
 @media (max-width: 600px) {
@@ -1907,19 +2033,12 @@ body.site-menu-open{
         height: 42px;
     }
 
-    .experience-gallery-logo {
+    .experience-gallery-nav {
         bottom: 24px;
         width: 156px;
-        height: auto;
+        height: 32px;
     }
 }
-
-@media (prefers-reduced-motion: reduce) {
-    .experience-gallery-track {
-        transition: none;
-    }
-}
-
 
 /* =========================================
    TABLET : 1024px 이하
@@ -2101,7 +2220,7 @@ body.site-menu-open{
 .reviews-section *::before,
 .reviews-section *::after {
     box-sizing: border-box;
-} */ 
+} */
 
 .reviews-inner {
     width: calc(100% - 80px);
@@ -2109,16 +2228,19 @@ body.site-menu-open{
     margin: 0 auto;
     padding: 70px 0 80px;
 }
+
 .reviews-header {
     margin-bottom: 48px;
     text-align: center;
 }
+
 .reviews-label {
     margin: 0 0 10px;
     font-size: 20px;
     font-weight: 500;
     color: #A8A8A8;
 }
+
 .reviews-title {
     margin: 0;
     font-size: 40px;
@@ -2126,6 +2248,7 @@ body.site-menu-open{
     line-height: 1.3;
     color: #fff;
 }
+
 .reviews-description {
     margin: 10px 0 0;
     font-size: 16px;
@@ -2133,12 +2256,14 @@ body.site-menu-open{
     line-height: 1.6;
     color: #CECECE;
 }
+
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 90px;
     row-gap: 50px;
 }
+
 .reviews-card {
     display: flex;
     flex-direction: column;
@@ -2152,22 +2277,26 @@ body.site-menu-open{
         background-color 0.3s ease,
         transform 0.3s ease;
 }
+
 .reviews-card:hover {
     background-color: #252525;
     transform: translateY(-5px);
 }
+
 .reviews-card-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
 }
+
 .reviews-stars {
     font-size: 14px;
     letter-spacing: 1px;
     white-space: nowrap;
     color: #F5F5F5;
 }
+
 .reviews-date {
     font-size: 13px;
     font-weight: 400;
@@ -2175,6 +2304,7 @@ body.site-menu-open{
     white-space: nowrap;
     color: #A8A8A8;
 }
+
 .reviews-text {
     margin: 10px 0 30px;
     font-size: 16px;
@@ -2183,6 +2313,7 @@ body.site-menu-open{
     color: #F5F5F5;
     overflow-wrap: break-word;
 }
+
 .reviews-profile {
     display: flex;
     align-items: center;
@@ -2191,6 +2322,7 @@ body.site-menu-open{
     padding-top: 10px;
     border-top: 1px solid #A8A8A8;
 }
+
 .reviews-avatar {
     display: block;
     width: 50px;
@@ -2199,18 +2331,21 @@ body.site-menu-open{
     object-fit: cover;
     flex-shrink: 0;
 }
+
 .reviews-user {
     display: flex;
     flex-direction: column;
     min-width: 0;
     gap: 7px;
 }
+
 .reviews-name {
     font-size: 13px;
     font-weight: 600;
     line-height: 1.3;
     color: #F5F5F5;
 }
+
 .reviews-user-info {
     font-size: 13px;
     font-weight: 400;
@@ -2377,6 +2512,7 @@ body.site-menu-open{
         font-size: 10px;
     }
 }
+
 /* section 06 끝 */
 
 /* section 07 시작 */
@@ -2405,12 +2541,14 @@ body.site-menu-open{
     margin: 0 auto;
     padding: 105px 0 100px;
 }
+
 .visit-label {
     margin: 0 0 5px;
     font-size: 20px;
     font-weight: 400;
     color: #CECECE;
 }
+
 .visit-title {
     margin: 0;
     font-size: 40px;
@@ -2418,15 +2556,18 @@ body.site-menu-open{
     line-height: 1.2;
     color: #fff;
 }
+
 .visit-intro {
     margin: 5px 0 0;
     font-size: 16px;
     line-height: 1.5;
     color: #CECECE;
 }
+
 .visit-hours {
     margin-top: 70px;
 }
+
 .visit-info-label {
     display: flex;
     align-items: center;
@@ -2436,6 +2577,7 @@ body.site-menu-open{
     font-weight: 400;
     color: #F5F5F5;
 }
+
 .visit-icon {
     display: block;
     width: 18px;
@@ -2443,6 +2585,7 @@ body.site-menu-open{
     object-fit: contain;
     flex-shrink: 0;
 }
+
 .visit-hours-time {
     margin: 0;
     font-size: 28px;
@@ -2450,6 +2593,7 @@ body.site-menu-open{
     line-height: 1.3;
     color: #fff;
 }
+
 .visit-hours-note {
     font-size: 16px;
     color: #CECECE;
@@ -2475,9 +2619,11 @@ body.site-menu-open{
     padding: 10px 0;
     color: #A8A8A8;
 }
+
 .visit-location {
     margin-top: 80px;
 }
+
 .visit-location-title {
     margin: 0 0 5px;
     font-size: 28px;
@@ -2485,40 +2631,47 @@ body.site-menu-open{
     line-height: 1.3;
     color: #fff;
 }
+
 .visit-address {
     margin: 0;
     font-size: 20px;
     line-height: 1.5;
     color: #fff;
 }
+
 .visit-transport {
     margin: 5px 0 0;
     font-size: 14px;
     line-height: 1.7;
     color: #A8A8A8;
 }
+
 .visit-tickets {
     min-width: 0;
 }
+
 .visit-tickets-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
-    padding:10px;
+    padding: 10px;
 }
+
 .visit-tickets-label {
-    padding:0 0 10px;
+    padding: 0 0 10px;
     font-size: 20px;
     color: #F5F5F5;
 }
+
 .visit-tickets-title {
     margin: 0;
     font-size: 28px;
     font-weight: 600;
     color: #fff;
 }
+
 .visit-discount-badge {
     display: inline-flex;
     align-items: center;
@@ -2531,12 +2684,14 @@ body.site-menu-open{
     color: #000000;
     background: #ffffff;
 }
+
 .visit-price-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: clamp(16px, 4.3vw, 105px);
     margin-top: 50px;
 }
+
 .visit-price-card {
     display: flex;
     flex-direction: column;
@@ -2549,6 +2704,7 @@ body.site-menu-open{
     border-radius: 30px;
     text-align: center;
 }
+
 .visit-price-type {
     margin: 0 0 10px;
     font-size: 16px;
@@ -2573,12 +2729,14 @@ body.site-menu-open{
     font-size: 16px;
     font-weight: 500;
 }
+
 .visit-price-note {
     margin: 10px 0 0;
     font-size: 16px;
     line-height: 1.4;
     color: #CECECE;
 }
+
 .visit-price-notices {
     display: flex;
     justify-content: space-between;
@@ -2586,18 +2744,21 @@ body.site-menu-open{
     gap: 300px;
     margin-top: 20px;
 }
+
 .visit-price-notices p {
     margin: 0;
     font-size: 16px;
     line-height: 1.6;
     color: #CECECE;
 }
+
 .visit-booking {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
     margin-top: 50px;
 }
+
 .visit-booking-btn {
     display: flex;
     align-items: center;
@@ -2616,6 +2777,7 @@ body.site-menu-open{
         background-color 0.3s ease,
         border-color 0.3s ease;
 }
+
 .visit-booking-btn:hover {
     background-color: #252525;
     border-color: #fff;
@@ -2652,6 +2814,7 @@ body.site-menu-open{
     flex-wrap: wrap;
     gap: 15px;
 }
+
 .visit-contact-link {
     display: inline-flex;
     align-items: center;
@@ -2664,11 +2827,13 @@ body.site-menu-open{
 .visit-contact-link:hover {
     color: #fff;
 }
+
 .visit-contact-divider {
     width: 1px;
     height: 20px;
     background: #A8A8A8;
 }
+
 .visit-contact-note {
     grid-column: 2;
     grid-row: 1 / 3;
@@ -2936,7 +3101,7 @@ body.site-menu-open{
     margin-top: 100px;
     background-color: #000;
     color: #fff;
-    border-top:1px solid #fff;
+    border-top: 1px solid #fff;
     box-sizing: border-box;
 }
 
@@ -2956,8 +3121,9 @@ body.site-menu-open{
     min-height: 550px;
     border-bottom: 1px solid #fff;
     text-align: center;
-    padding:20px 0;
+    padding: 20px 0;
 }
+
 .footer-logo {
     display: block;
     width: 300px;
@@ -2965,6 +3131,7 @@ body.site-menu-open{
     height: 300px;
     object-fit: contain;
 }
+
 .footer-slogan {
     font-size: 56px;
     font-weight: 400;
@@ -2972,11 +3139,13 @@ body.site-menu-open{
     letter-spacing: -0.03em;
     color: #F5F5F5;
 }
+
 .footer-bottom {
     width: 100%;
     min-height: 310px;
     background-color: #000;
 }
+
 .footer-bottom-inner {
     display: flex;
     flex-direction: column;
@@ -2987,12 +3156,14 @@ body.site-menu-open{
     margin: 0 auto;
     padding: 30px 0 30px;
 }
+
 .footer-social {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 100px;
 }
+
 .footer-social-link {
     display: inline-flex;
     align-items: center;
@@ -3003,9 +3174,11 @@ body.site-menu-open{
     color: #A8A8A8;
     transition: color 0.3s ease;
 }
+
 .footer-social-link:hover {
     color: #fff;
 }
+
 .footer-arrow-icon {
     display: block;
     width: 20px;
@@ -3014,31 +3187,37 @@ body.site-menu-open{
     flex-shrink: 0;
     transition: transform 0.3s ease;
 }
+
 .footer-social-link:hover .footer-arrow-icon {
     transform: translate(3px, -3px);
 }
+
 .footer-bottom-row {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 130px;
 }
+
 .footer-legal {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
+
 .footer-copyright {
     margin: 0;
     font-size: 16px;
     font-weight: 400;
     color: #A8A8A8;
 }
+
 .footer-legal-links {
     display: flex;
     align-items: center;
     gap: 80px;
 }
+
 .footer-legal-links a {
     font-size: 16px;
     font-weight: 400;
@@ -3056,21 +3235,25 @@ body.site-menu-open{
     color: #fff;
     transition: opacity 0.3s ease;
 }
+
 .footer-back:hover {
     opacity: 0.7;
 }
+
 .footer-rocket-icon {
     display: block;
     width: 30px;
     height: 30px;
     object-fit: contain;
 }
+
 .footer-back span {
     font-size: 28px;
     font-weight: 600;
     line-height: 1.3;
     white-space: nowrap;
 }
+
 .orbita-footer a:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 5px;
@@ -3290,6 +3473,7 @@ body.site-menu-open{
 
 /* 움직임 최소화 환경 */
 @media (prefers-reduced-motion: reduce) {
+
     .footer-social-link,
     .footer-arrow-icon,
     .footer-legal-links a,
