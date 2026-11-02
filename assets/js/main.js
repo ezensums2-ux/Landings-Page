@@ -114,6 +114,8 @@ const experienceGallery = document.querySelector("#experience-gallery");
 const experienceGalleryTrigger = document.querySelector(".immersive-scroll");
 
 if (experienceGallery && experienceGalleryTrigger) {
+    document.body.appendChild(experienceGallery);
+
     const closeGalleryButton = experienceGallery.querySelector(".experience-gallery-close");
     const navIcons = experienceGallery.querySelectorAll(".experience-gallery-logo");
     const navAnchors = experienceGallery.querySelectorAll(".experience-gallery-anchor");
@@ -144,6 +146,7 @@ if (experienceGallery && experienceGalleryTrigger) {
                 slidesPerView: 1,
                 spaceBetween: 0,
                 speed: 600,
+                loop: true,
                 grabCursor: true,
                 keyboard: {
                     enabled: true,
@@ -153,7 +156,7 @@ if (experienceGallery && experienceGalleryTrigger) {
                 observeParents: true,
                 on: {
                     slideChange: function () {
-                        updateExperienceNav(this.activeIndex);
+                        updateExperienceNav(this.realIndex);
                     },
                 },
             });
@@ -167,7 +170,7 @@ if (experienceGallery && experienceGalleryTrigger) {
 
         initExperienceSwiper();
         if (experienceSwiper) {
-            experienceSwiper.slideTo(0, 0);
+            experienceSwiper.slideToLoop(0, 0);
         }
         updateExperienceNav(0);
         closeGalleryButton.focus();
@@ -190,7 +193,7 @@ if (experienceGallery && experienceGalleryTrigger) {
             event.stopPropagation();
             const targetIndex = parseInt(anchor.dataset.index, 10);
             if (experienceSwiper && !isNaN(targetIndex)) {
-                experienceSwiper.slideTo(targetIndex);
+                experienceSwiper.slideToLoop(targetIndex);
             }
         });
     });

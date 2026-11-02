@@ -10,21 +10,6 @@
 
     /* 기존 컨테이너 최대 크기 참고값 (각 섹션은 기존 설정 유지) */
     --container-max: 1680px;
-
-    /* 향후 섹션 간격 공통화에 쓸 값. 기존 margin-top 설정은 유지합니다. */
-    --section-gap: 100px;
-}
-
-@media (max-width: 1024px) {
-    :root { --section-gap: 80px; }
-}
-
-@media (max-width: 768px) {
-    :root { --section-gap: 60px; }
-}
-
-@media (max-width: 480px) {
-    :root { --section-gap: 40px; }
 }
 
 /* =========================================================
@@ -111,4 +96,3 @@ body{
     font-size: 56px;
     font-weight: 500;
 }
-

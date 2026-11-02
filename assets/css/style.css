@@ -483,7 +483,6 @@ body.site-menu-open {
     position: relative;
     isolation: isolate;
     padding: 100px 0;
-    margin-top: 100px;
     color: #fff;
     background-color: #0b0b0e;
     overflow: hidden;
@@ -945,7 +944,6 @@ body.site-menu-open {
 .about-section {
     position: relative;
     --about-header-height: 100px;
-    margin-top: 100px;
     width: 100%;
     height: auto;
     display: block;
@@ -1090,10 +1088,6 @@ body.site-menu-open {
 
 @media (max-width: 1024px) {
 
-    .about-section {
-        margin-top: 80px;
-    }
-
     .about-inner {
         width: calc(100% - 64px);
     }
@@ -1130,7 +1124,6 @@ body.site-menu-open {
     .about-section {
         --about-header-height: 72px;
         background-position: center;
-        margin-top: 60px;
     }
 
     .about-sticky {
@@ -1194,10 +1187,6 @@ body.site-menu-open {
 ========================================= */
 
 @media (max-width: 480px) {
-    .about-section {
-        margin-top: 40px;
-    }
-
     .about-inner {
         width: calc(100% - 32px);
     }
@@ -1285,7 +1274,6 @@ body.site-menu-open {
     position: relative;
     isolation: isolate;
     width: 100%;
-    margin: 100px 0;
     height: auto;
     color: #fff;
     background: #000;
@@ -1752,14 +1740,34 @@ body.site-menu-open {
     position: relative;
     width: 100%;
     min-height: 830px;
-    margin-top: 100px;
     background-color: #000;
     overflow: hidden;
     box-sizing: border-box;
 }
 
+.immersive-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.immersive-section::before {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.18));
+    content: "";
+    pointer-events: none;
+}
+
 .immersive-inner {
     position: relative;
+    z-index: 2;
     width: calc(100% - 80px);
     max-width: 1680px;
     min-height: 830px;
@@ -1869,6 +1877,12 @@ body.site-menu-open {
     color: inherit;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .immersive-video {
+        display: none;
+    }
+}
+
 /* EXPERIENCE 전체 화면 갤러리 */
 .experience-gallery[hidden] {
     display: none;
@@ -1896,7 +1910,7 @@ body.site-menu-open {
     position: relative;
 }
 
-.experience-gallery-slide {
+.swiper-slide.experience-gallery-slide {
     position: relative;
     display: flex;
     align-items: center;
@@ -1914,6 +1928,20 @@ body.site-menu-open {
     width: min(100%, 1680px);
     max-height: min(830px, calc(100vh - 200px));
     object-fit: contain;
+    pointer-events: none;
+}
+
+.experience-gallery-caption {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 50%;
+    width: calc(100% - 40px);
+    margin: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
     pointer-events: none;
 }
 
@@ -1948,6 +1976,10 @@ body.site-menu-open {
     visibility: hidden;
     transition: opacity 250ms ease, visibility 250ms ease;
     pointer-events: none;
+}
+
+.experience-gallery-logo circle[fill="#D2D2D2"] {
+    r: 5px;
 }
 
 .experience-gallery-logo.is-active {
@@ -2047,7 +2079,6 @@ body.site-menu-open {
 @media (max-width: 1024px) {
 
     .immersive-section {
-        margin-top: 80px;
         min-height: 720px;
     }
 
@@ -2095,7 +2126,6 @@ body.site-menu-open {
 @media (max-width: 768px) {
 
     .immersive-section {
-        margin-top: 60px;
         min-height: 650px;
     }
 
@@ -2153,7 +2183,6 @@ body.site-menu-open {
 @media (max-width: 480px) {
 
     .immersive-section {
-        margin-top: 40px;
         min-height: 560px;
     }
 
@@ -2207,12 +2236,22 @@ body.site-menu-open {
 
 /* section 06 시작 */
 .reviews-section {
+    position: relative;
+    isolation: isolate;
     width: 100%;
     min-height: 830px;
-    margin-top: 100px;
-    background-color: #000;
+    background: url("../images/reviews.jpg.png") center / cover no-repeat;
     color: #fff;
     box-sizing: border-box;
+}
+
+.reviews-section::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
+    content: "";
+    pointer-events: none;
 }
 
 /* 섹션 내부 요소 박스 크기 계산 */
@@ -2223,6 +2262,8 @@ body.site-menu-open {
 } */
 
 .reviews-inner {
+    position: relative;
+    z-index: 1;
     width: calc(100% - 80px);
     max-width: 1400px;
     margin: 0 auto;
@@ -2361,7 +2402,6 @@ body.site-menu-open {
 @media (max-width: 1024px) {
 
     .reviews-section {
-        margin-top: 80px;
         min-height: auto;
     }
 
@@ -2393,11 +2433,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 768px) {
-
-    .reviews-section {
-        margin-top: 60px;
-    }
-
     .reviews-inner {
         width: calc(100% - 40px);
         padding: 60px 0;
@@ -2444,11 +2479,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 480px) {
-
-    .reviews-section {
-        margin-top: 40px;
-    }
-
     .reviews-inner {
         width: calc(100% - 32px);
         padding: 50px 0;
@@ -2519,7 +2549,6 @@ body.site-menu-open {
 .visit-section {
     width: 100%;
     min-height: 830px;
-    margin-top: 100px;
     background-color: #000;
     color: #fff;
     box-sizing: border-box;
@@ -2854,7 +2883,6 @@ body.site-menu-open {
 @media (max-width: 1024px) {
 
     .visit-section {
-        margin-top: 80px;
         min-height: auto;
     }
 
@@ -2914,11 +2942,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 768px) {
-
-    .visit-section {
-        margin-top: 60px;
-    }
-
     .visit-inner {
         width: calc(100% - 40px);
         gap: 55px;
@@ -3007,11 +3030,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 480px) {
-
-    .visit-section {
-        margin-top: 40px;
-    }
-
     .visit-inner {
         width: calc(100% - 32px);
         padding: 55px 0;
@@ -3098,7 +3116,6 @@ body.site-menu-open {
 /* footer 시작 */
 .orbita-footer {
     width: 100%;
-    margin-top: 100px;
     background-color: #000;
     color: #fff;
     border-top: 1px solid #fff;
@@ -3266,10 +3283,6 @@ body.site-menu-open {
 
 @media (max-width: 1024px) {
 
-    .orbita-footer {
-        margin-top: 80px;
-    }
-
     .footer-brand {
         min-height: 470px;
         padding: 45px 20px;
@@ -3319,11 +3332,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 768px) {
-
-    .orbita-footer {
-        margin-top: 60px;
-    }
-
     .footer-brand {
         min-height: 390px;
         padding: 45px 20px;
@@ -3401,11 +3409,6 @@ body.site-menu-open {
 ========================================== */
 
 @media (max-width: 480px) {
-
-    .orbita-footer {
-        margin-top: 40px;
-    }
-
     /* 로고 영역 */
     .footer-brand {
         min-height: auto;
